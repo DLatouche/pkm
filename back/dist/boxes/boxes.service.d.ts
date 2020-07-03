@@ -8,4 +8,5 @@ export declare class BoxesService {
     findAll(): Promise<Box[]>;
     getSize(id: string): Promise<number>;
     getType(id: string): Promise<string[]>;
+    delete(id: string): Promise<void>;
 }

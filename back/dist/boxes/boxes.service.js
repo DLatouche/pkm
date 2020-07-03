@@ -45,6 +45,10 @@ let BoxesService = class BoxesService {
         });
         return types;
     }
+    async delete(id) {
+        await this.boxModel.deleteOne({ _id: id });
+        return;
+    }
 };
 BoxesService = __decorate([
     common_1.Injectable(),

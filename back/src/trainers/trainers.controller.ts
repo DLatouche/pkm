@@ -1,15 +1,16 @@
-import { Controller, Post, Get, Body, Param, NotFoundException } from '@nestjs/common';
+import { Controller, Post, Get, Body, Param, NotFoundException, Delete, ForbiddenException } from '@nestjs/common';
 import { TrainersService } from './trainers.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Trainer } from 'src/schemas/trainer.schema';
 import { Box } from 'src/schemas/box.schema';
 import { Pokemon } from 'src/schemas/pokemon.schema';
+import { BoxesService } from 'src/boxes/boxes.service';
 
 @ApiTags('trainers')
 @Controller('trainers')
 export class TrainersController {
 
-    constructor(private trainersService: TrainersService) { }
+    constructor(private trainersService: TrainersService, private boxesService: BoxesService) { }
 
     @Post()
     @ApiOperation({ summary: 'Create trainer.' })
@@ -54,14 +55,25 @@ export class TrainersController {
         return await this.trainersService.findOneBox(id, idBox);
     }
 
+    @Delete(":id/boxes/:idBox")
+    @ApiOperation({ summary: 'Delete trainer box' })
+    @ApiResponse({ status: 201, description: 'return id of deleted box', })
+    @ApiResponse({ status: 402, description: 'Box not empty', })
+    async deleteBox(@Param('id') id: string, @Param('idBox') idBox: string): Promise<string> {
+        const box = await this.trainersService.findOneBox(id, idBox);
+        if (box.pokemons.length > 0) throw new ForbiddenException("Box not empty");
+        await this.boxesService.delete(idBox);
+        return idBox
+    }
+
     @Post(":id/boxes/:idBox/addPokemon")
     @ApiOperation({ summary: 'Add pokemon to one box of trainer.' })
     @ApiResponse({ status: 201, description: 'Return pokemon.', })
-    async addPokemon(@Param('id') id: string, @Param('idBox') idBox: string, @Body('name') name: string, 
-    @Body('firstType') firstType: string, @Body('secondType') secondType: string): Promise<Pokemon> {
-        if((firstType == null || firstType.length == 0) && (secondType == null || secondType.length == 0)){
+    async addPokemon(@Param('id') id: string, @Param('idBox') idBox: string, @Body('name') name: string,
+        @Body('firstType') firstType: string, @Body('secondType') secondType: string): Promise<Pokemon> {
+        if ((firstType == null || firstType.length == 0) && (secondType == null || secondType.length == 0)) {
             throw new NotFoundException('Type not found.');
-        }else{
+        } else {
             return await this.trainersService.addPokemon(id, idBox, name, firstType, secondType);
         }
     }

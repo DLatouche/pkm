@@ -19,9 +19,11 @@ const swagger_1 = require("@nestjs/swagger");
 const trainer_schema_1 = require("../schemas/trainer.schema");
 const box_schema_1 = require("../schemas/box.schema");
 const pokemon_schema_1 = require("../schemas/pokemon.schema");
+const boxes_service_1 = require("../boxes/boxes.service");
 let TrainersController = class TrainersController {
-    constructor(trainersService) {
+    constructor(trainersService, boxesService) {
         this.trainersService = trainersService;
+        this.boxesService = boxesService;
     }
     async create(name, username, password) {
         return await this.trainersService.create(name, username, password);
@@ -40,6 +42,13 @@ let TrainersController = class TrainersController {
     }
     async getBox(id, idBox) {
         return await this.trainersService.findOneBox(id, idBox);
+    }
+    async deleteBox(id, idBox) {
+        const box = await this.trainersService.findOneBox(id, idBox);
+        if (box.pokemons.length > 0)
+            throw new common_1.ForbiddenException("Box not empty");
+        await this.boxesService.delete(idBox);
+        return idBox;
     }
     async addPokemon(id, idBox, name, firstType, secondType) {
         if ((firstType == null || firstType.length == 0) && (secondType == null || secondType.length == 0)) {
@@ -105,6 +114,16 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "getBox", null);
 __decorate([
+    common_1.Delete(":id/boxes/:idBox"),
+    swagger_1.ApiOperation({ summary: 'Delete trainer box' }),
+    swagger_1.ApiResponse({ status: 201, description: 'return id of deleted box', }),
+    swagger_1.ApiResponse({ status: 402, description: 'Box not empty', }),
+    __param(0, common_1.Param('id')), __param(1, common_1.Param('idBox')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], TrainersController.prototype, "deleteBox", null);
+__decorate([
     common_1.Post(":id/boxes/:idBox/addPokemon"),
     swagger_1.ApiOperation({ summary: 'Add pokemon to one box of trainer.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return pokemon.', }),
@@ -117,7 +136,7 @@ __decorate([
 TrainersController = __decorate([
     swagger_1.ApiTags('trainers'),
     common_1.Controller('trainers'),
-    __metadata("design:paramtypes", [trainers_service_1.TrainersService])
+    __metadata("design:paramtypes", [trainers_service_1.TrainersService, boxes_service_1.BoxesService])
 ], TrainersController);
 exports.TrainersController = TrainersController;
 //# sourceMappingURL=trainers.controller.js.map

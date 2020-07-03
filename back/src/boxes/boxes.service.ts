@@ -3,7 +3,6 @@ import { Connection, Model } from 'mongoose';
 import { Box } from 'src/schemas/box.schema';
 import { Type } from 'src/schemas/type.schema';
 import { InjectModel, InjectConnection } from '@nestjs/mongoose';
-import { type } from 'os';
 
 @Injectable()
 export class BoxesService {
@@ -26,9 +25,14 @@ export class BoxesService {
         let types: string[] = [];
         const box = await this.boxModel.findById(id).populate("pokemons");
         box.pokemons.forEach((pkm) => {
-            if(pkm.firstType?.[0]?._id && !types.includes(pkm.firstType[0]._id.toString())) types.push(pkm.firstType[0]._id.toString())
-            if(pkm.secondType?.[0]?._id && !types.includes(pkm.secondType[0]._id.toString())) types.push(pkm.secondType[0]._id.toString())
+            if (pkm.firstType?.[0]?._id && !types.includes(pkm.firstType[0]._id.toString())) types.push(pkm.firstType[0]._id.toString())
+            if (pkm.secondType?.[0]?._id && !types.includes(pkm.secondType[0]._id.toString())) types.push(pkm.secondType[0]._id.toString())
         })
         return types;
+    }
+
+    async delete(id: string): Promise<void> {
+        await this.boxModel.deleteOne({ _id: id });
+        return
     }
 }

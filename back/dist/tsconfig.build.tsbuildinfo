@@ -1532,8 +1532,8 @@
         "affectsGlobalScope": false
       },
       "../src/boxes/boxes.service.ts": {
-        "version": "3a44f6fe77bb376ae863cbc210be3984a4fe6c558b75e30a124aa97e0faf7863",
-        "signature": "e7520921c9f5dc0580e61c9717e96c748b5c60f21b860bc8df2cf983d9ec3735",
+        "version": "e764a8e7ead490cbd47c9264d7eec715a1a2c48cf142074f2e4711ed8579f5eb",
+        "signature": "a6f291682ff681908803b7770a452457199c54831ce49b2158dca47f11216a2e",
         "affectsGlobalScope": false
       },
       "../src/pokemons/pokemons.service.ts": {
@@ -1737,8 +1737,8 @@
         "affectsGlobalScope": false
       },
       "../src/trainers/trainers.controller.ts": {
-        "version": "38450a2b2562bd1be162fee6dca9779ebf7c6a26226c63f386f3e95677aee995",
-        "signature": "70f4e1df983fd2538de7f34728672951781044d9ad3b7c73f324d51774ba64d6",
+        "version": "837397cb4394ce5e0763582dc3e48f9fe13861ae12245c2fedbffab72e00cd12",
+        "signature": "b6af89c368f4b52abddc8f0291b2d01a3ddca8f60c02e2738815becc393cf9a5",
         "affectsGlobalScope": false
       },
       "../src/boxes/boxes.controller.ts": {
@@ -6057,7 +6057,6 @@
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/os.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -6156,6 +6155,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
+        "../src/boxes/boxes.service.ts",
         "../src/schemas/box.schema.ts",
         "../src/schemas/pokemon.schema.ts",
         "../src/schemas/trainer.schema.ts",
@@ -10031,6 +10031,7 @@
         "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../src/trainers/trainers.controller.ts": [
+        "../src/boxes/boxes.service.ts",
         "../src/schemas/box.schema.ts",
         "../src/schemas/pokemon.schema.ts",
         "../src/schemas/trainer.schema.ts",
