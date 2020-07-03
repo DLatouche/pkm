@@ -1,7 +1,9 @@
-import { Controller, Post, Get, Body, Param } from '@nestjs/common';
+import { Controller, Post, Get, Body, Param, NotFoundException } from '@nestjs/common';
 import { TrainersService } from './trainers.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Trainer } from 'src/schemas/trainer.schema';
+import { Box } from 'src/schemas/box.schema';
+import { Pokemon } from 'src/schemas/pokemon.schema';
 
 @ApiTags('trainers')
 @Controller('trainers')
@@ -10,7 +12,7 @@ export class TrainersController {
     constructor(private trainersService: TrainersService) { }
 
     @Post()
-    @ApiOperation({ summary: 'Create trainer' })
+    @ApiOperation({ summary: 'Create trainer.' })
     @ApiResponse({ status: 201, description: 'Return the created trainer.', })
     async create(@Body('name') name: string, @Body('username') username: string, @Body('password') password: string): Promise<Trainer> {
         return await this.trainersService.create(name, username, password);
@@ -31,10 +33,39 @@ export class TrainersController {
     }
 
     @Post(':id/boxes')
-    @ApiOperation({ summary: 'Add box to trainer' })
+    @ApiOperation({ summary: 'Add box to trainer.' })
     @ApiResponse({ status: 201, description: 'Return the trainer with his boxes.', })
     async addBox(@Param('id') id: string,
         @Body('boxName') boxName: string): Promise<Trainer> {
         return await this.trainersService.addBox(id, boxName);
     }
+
+    @Get(":id/boxes")
+    @ApiOperation({ summary: 'Get all boxes of trainer.' })
+    @ApiResponse({ status: 201, description: 'Return all boxes of trainer.', })
+    async getAllBoxes(@Param('id') id: string): Promise<Box[]> {
+        return await this.trainersService.findAllBoxes(id);
+    }
+
+    @Get(":id/boxes/:idBox")
+    @ApiOperation({ summary: 'Get one box of trainer.' })
+    @ApiResponse({ status: 201, description: 'Return one box of trainer.', })
+    async getBox(@Param('id') id: string, @Param('idBox') idBox: string): Promise<Box> {
+        return await this.trainersService.findOneBox(id, idBox);
+    }
+
+    @Post(":id/boxes/:idBox/addPokemon")
+    @ApiOperation({ summary: 'Add pokemon to one box of trainer.' })
+    @ApiResponse({ status: 201, description: 'Return pokemon.', })
+    async addPokemon(@Param('id') id: string, @Param('idBox') idBox: string, @Body('name') name: string, 
+    @Body('firstType') firstType: string, @Body('secondType') secondType: string): Promise<Pokemon> {
+        console.log('trainers.controller.ts -> 61: firstType', firstType )
+        console.log('trainers.controller.ts -> 61: secondType', secondType )
+        if((firstType == null || firstType.length == 0) && (secondType == null || secondType.length == 0)){
+            throw new NotFoundException('Type not found.');
+        }else{
+            return await this.trainersService.addPokemon(id, idBox, name, firstType, secondType);
+        }
+    }
+
 }

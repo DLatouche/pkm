@@ -30,9 +30,9 @@ let TypesController = class TypesController {
 };
 __decorate([
     common_1.Post(),
-    swagger_1.ApiOperation({ summary: 'Create type' }),
+    swagger_1.ApiOperation({ summary: 'Create type.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return the created type.', }),
-    swagger_1.ApiResponse({ status: 403, description: 'Return Forbidden is type is already created', }),
+    swagger_1.ApiResponse({ status: 403, description: 'Return Forbidden is type is already created.', }),
     __param(0, common_1.Body('name')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),

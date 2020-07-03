@@ -21,5 +21,8 @@ export class TypesService {
         return await this.typeModel.find();
     }
 
+    async findById(id: string): Promise<Type>{
+        return await this.typeModel.findById(id);
+    }
 
 }

@@ -17,6 +17,8 @@ const common_1 = require("@nestjs/common");
 const trainers_service_1 = require("./trainers.service");
 const swagger_1 = require("@nestjs/swagger");
 const trainer_schema_1 = require("../schemas/trainer.schema");
+const box_schema_1 = require("../schemas/box.schema");
+const pokemon_schema_1 = require("../schemas/pokemon.schema");
 let TrainersController = class TrainersController {
     constructor(trainersService) {
         this.trainersService = trainersService;
@@ -33,10 +35,26 @@ let TrainersController = class TrainersController {
     async addBox(id, boxName) {
         return await this.trainersService.addBox(id, boxName);
     }
+    async getAllBoxes(id) {
+        return await this.trainersService.findAllBoxes(id);
+    }
+    async getBox(id, idBox) {
+        return await this.trainersService.findOneBox(id, idBox);
+    }
+    async addPokemon(id, idBox, name, firstType, secondType) {
+        console.log('trainers.controller.ts -> 61: firstType', firstType);
+        console.log('trainers.controller.ts -> 61: secondType', secondType);
+        if ((firstType == null || firstType.length == 0) && (secondType == null || secondType.length == 0)) {
+            throw new common_1.NotFoundException('Type not found.');
+        }
+        else {
+            return await this.trainersService.addPokemon(id, idBox, name, firstType, secondType);
+        }
+    }
 };
 __decorate([
     common_1.Post(),
-    swagger_1.ApiOperation({ summary: 'Create trainer' }),
+    swagger_1.ApiOperation({ summary: 'Create trainer.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return the created trainer.', }),
     __param(0, common_1.Body('name')), __param(1, common_1.Body('username')), __param(2, common_1.Body('password')),
     __metadata("design:type", Function),
@@ -62,7 +80,7 @@ __decorate([
 ], TrainersController.prototype, "findById", null);
 __decorate([
     common_1.Post(':id/boxes'),
-    swagger_1.ApiOperation({ summary: 'Add box to trainer' }),
+    swagger_1.ApiOperation({ summary: 'Add box to trainer.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return the trainer with his boxes.', }),
     __param(0, common_1.Param('id')),
     __param(1, common_1.Body('boxName')),
@@ -70,6 +88,34 @@ __decorate([
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "addBox", null);
+__decorate([
+    common_1.Get(":id/boxes"),
+    swagger_1.ApiOperation({ summary: 'Get all boxes of trainer.' }),
+    swagger_1.ApiResponse({ status: 201, description: 'Return all boxes of trainer.', }),
+    __param(0, common_1.Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], TrainersController.prototype, "getAllBoxes", null);
+__decorate([
+    common_1.Get(":id/boxes/:idBox"),
+    swagger_1.ApiOperation({ summary: 'Get one box of trainer.' }),
+    swagger_1.ApiResponse({ status: 201, description: 'Return one box of trainer.', }),
+    __param(0, common_1.Param('id')), __param(1, common_1.Param('idBox')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], TrainersController.prototype, "getBox", null);
+__decorate([
+    common_1.Post(":id/boxes/:idBox/addPokemon"),
+    swagger_1.ApiOperation({ summary: 'Add pokemon to one box of trainer.' }),
+    swagger_1.ApiResponse({ status: 201, description: 'Return pokemon.', }),
+    __param(0, common_1.Param('id')), __param(1, common_1.Param('idBox')), __param(2, common_1.Body('name')),
+    __param(3, common_1.Body('firstType')), __param(4, common_1.Body('secondType')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String, String, String, String]),
+    __metadata("design:returntype", Promise)
+], TrainersController.prototype, "addPokemon", null);
 TrainersController = __decorate([
     swagger_1.ApiTags('trainers'),
     common_1.Controller('trainers'),

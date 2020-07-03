@@ -9,9 +9,9 @@ export class TypesController {
     constructor(private typesService: TypesService) { }
 
     @Post()
-    @ApiOperation({ summary: 'Create type' })
+    @ApiOperation({ summary: 'Create type.' })
     @ApiResponse({ status: 201, description: 'Return the created type.', })
-    @ApiResponse({ status: 403, description: 'Return Forbidden is type is already created', })
+    @ApiResponse({ status: 403, description: 'Return Forbidden is type is already created.', })
     async create(@Body('name') name: string): Promise<Type> {
         return await this.typesService.create(name);
     }

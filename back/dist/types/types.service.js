@@ -35,6 +35,9 @@ let TypesService = class TypesService {
     async findAll() {
         return await this.typeModel.find();
     }
+    async findById(id) {
+        return await this.typeModel.findById(id);
+    }
 };
 TypesService = __decorate([
     common_1.Injectable(),

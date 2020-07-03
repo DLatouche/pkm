@@ -24,7 +24,7 @@ let BoxesController = class BoxesController {
 };
 __decorate([
     common_1.Get(),
-    swagger_1.ApiOperation({ summary: 'Get all boxes' }),
+    swagger_1.ApiOperation({ summary: 'Get all boxes.' }),
     swagger_1.ApiResponse({ status: 201, description: 'All boxes.' }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),

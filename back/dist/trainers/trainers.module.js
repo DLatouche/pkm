@@ -13,11 +13,14 @@ const trainers_service_1 = require("./trainers.service");
 const trainer_schema_1 = require("../schemas/trainer.schema");
 const mongoose_1 = require("@nestjs/mongoose");
 const boxes_module_1 = require("../boxes/boxes.module");
+const pokemons_module_1 = require("../pokemons/pokemons.module");
+const types_service_1 = require("../types/types.service");
+const types_module_1 = require("../types/types.module");
 let TrainersModule = class TrainersModule {
 };
 TrainersModule = __decorate([
     common_1.Module({
-        imports: [mongoose_1.MongooseModule.forFeature([{ name: "trainer", schema: trainer_schema_1.TrainerSchema }]), boxes_module_1.BoxesModule],
+        imports: [mongoose_1.MongooseModule.forFeature([{ name: "trainer", schema: trainer_schema_1.TrainerSchema }]), boxes_module_1.BoxesModule, pokemons_module_1.PokemonsModule, types_module_1.TypesModule],
         controllers: [trainers_controller_1.TrainersController],
         providers: [trainers_service_1.TrainersService],
         exports: [trainers_service_1.TrainersService]

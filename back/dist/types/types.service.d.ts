@@ -6,4 +6,5 @@ export declare class TypesService {
     constructor(connection: Connection, typeModel: Model<Type>);
     create(name: string): Promise<Type>;
     findAll(): Promise<Type[]>;
+    findById(id: string): Promise<Type>;
 }
