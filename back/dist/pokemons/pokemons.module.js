@@ -10,12 +10,16 @@ exports.PokemonsModule = void 0;
 const common_1 = require("@nestjs/common");
 const pokemons_controller_1 = require("./pokemons.controller");
 const pokemons_service_1 = require("./pokemons.service");
+const mongoose_1 = require("@nestjs/mongoose");
+const pokemon_schema_1 = require("../schemas/pokemon.schema");
 let PokemonsModule = class PokemonsModule {
 };
 PokemonsModule = __decorate([
     common_1.Module({
+        imports: [mongoose_1.MongooseModule.forFeature([{ name: "pokemon", schema: pokemon_schema_1.PokemonSchema }])],
         controllers: [pokemons_controller_1.PokemonsController],
-        providers: [pokemons_service_1.PokemonsService]
+        providers: [pokemons_service_1.PokemonsService],
+        exports: [pokemons_service_1.PokemonsService]
     })
 ], PokemonsModule);
 exports.PokemonsModule = PokemonsModule;

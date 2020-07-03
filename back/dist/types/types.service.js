@@ -6,21 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BoxesModule = void 0;
+exports.TypesService = void 0;
 const common_1 = require("@nestjs/common");
-const boxes_controller_1 = require("./boxes.controller");
-const boxes_service_1 = require("./boxes.service");
-const mongoose_1 = require("@nestjs/mongoose");
-const box_schema_1 = require("../schemas/box.schema");
-let BoxesModule = class BoxesModule {
+let TypesService = class TypesService {
 };
-BoxesModule = __decorate([
-    common_1.Module({
-        imports: [mongoose_1.MongooseModule.forFeature([{ name: "box", schema: box_schema_1.BoxSchema }])],
-        controllers: [boxes_controller_1.BoxesController],
-        providers: [boxes_service_1.BoxesService],
-        exports: [boxes_service_1.BoxesService]
-    })
-], BoxesModule);
-exports.BoxesModule = BoxesModule;
-//# sourceMappingURL=boxes.module.js.map
+TypesService = __decorate([
+    common_1.Injectable()
+], TypesService);
+exports.TypesService = TypesService;
+//# sourceMappingURL=types.service.js.map

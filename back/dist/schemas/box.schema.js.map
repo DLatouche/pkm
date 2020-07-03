@@ -1,1 +1,1 @@
-{"version":3,"file":"box.schema.js","sourceRoot":"","sources":["../../src/schemas/box.schema.ts"],"names":[],"mappings":""}
+{"version":3,"file":"box.schema.js","sourceRoot":"","sources":["../../src/schemas/box.schema.ts"],"names":[],"mappings":";;;AAAA,qCAAqC;AAExB,QAAA,SAAS,GAAG,IAAI,QAAQ,CAAC,MAAM,CAAC;IACzC,IAAI,EAAE,EAAE,IAAI,EAAE,MAAM,EAAE,QAAQ,EAAE,IAAI,EAAE;CACzC,CAAC,CAAA"}

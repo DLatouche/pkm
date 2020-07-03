@@ -15,14 +15,13 @@ const trainers_module_1 = require("./trainers/trainers.module");
 const boxes_module_1 = require("./boxes/boxes.module");
 const types_module_1 = require("./types/types.module");
 const pokemons_module_1 = require("./pokemons/pokemons.module");
-const type_service_1 = require("./type/type.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [mongoose_1.MongooseModule.forRoot('mongodb://localhost:27017/pkm'), trainers_module_1.TrainersModule, boxes_module_1.BoxesModule, types_module_1.TypesModule, pokemons_module_1.PokemonsModule],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService, type_service_1.TypeService],
+        providers: [app_service_1.AppService],
     })
 ], AppModule);
 exports.AppModule = AppModule;
