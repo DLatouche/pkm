@@ -3,11 +3,11 @@ import { TrainersService } from './trainers.service';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Trainer } from 'src/schemas/trainer.schema';
 
+@ApiTags('trainers')
 @Controller('trainers')
 export class TrainersController {
 
     constructor(private trainersService: TrainersService) { }
-
 
     @Post()
     @ApiOperation({ summary: 'Create trainer' })

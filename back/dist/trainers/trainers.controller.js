@@ -63,7 +63,7 @@ __decorate([
 __decorate([
     common_1.Post(':id/boxes'),
     swagger_1.ApiOperation({ summary: 'Add box to trainer' }),
-    swagger_1.ApiResponse({ status: 201, description: 'Return the trainer with him boxes.', }),
+    swagger_1.ApiResponse({ status: 201, description: 'Return the trainer with his boxes.', }),
     __param(0, common_1.Param('id')),
     __param(1, common_1.Body('boxName')),
     __metadata("design:type", Function),
@@ -71,6 +71,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "addBox", null);
 TrainersController = __decorate([
+    ApiTags('trainers'),
     common_1.Controller('trainers'),
     __metadata("design:paramtypes", [trainers_service_1.TrainersService])
 ], TrainersController);

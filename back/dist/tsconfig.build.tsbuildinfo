@@ -1727,7 +1727,7 @@
         "affectsGlobalScope": false
       },
       "../src/trainers/trainers.controller.ts": {
-        "version": "3ce2da707a8e3a3288bfa361f45d645520bd3d4b09269bd07d4ba7814a993e3a",
+        "version": "fd66b033e4fe1e35d705ab7e1969bea3e9354452aa498f87b420759384eeeca9",
         "signature": "7dc3831b71dc66f8699a8841f7c35ac0155c11da1807c5c4363bd0b61db66526",
         "affectsGlobalScope": false
       },
@@ -1746,14 +1746,14 @@
         "signature": "bb0ba2378251c73027f3e3074dbcf40bd4e1570e5b43911aeb17e0fe752d8bba",
         "affectsGlobalScope": false
       },
-      "../src/types/types.controller.ts": {
-        "version": "9bd547fb888ed22dee7214b8bfd09fb201ef9b83d79b996340b3762622653591",
-        "signature": "5d5cdec31ffe3673fe37716a1d898b0e2ef9a139c5a3a83a04d280d74075bef1",
+      "../src/types/types.service.ts": {
+        "version": "9a4dae8aca2d4f163668f293b4fcc72537bf22a58a1baee5b5f8d33e1eed2660",
+        "signature": "3ee412d1b466b358cfdb46ed9dabb81cafdad6a4ffa0b195424ef8f49e45a62c",
         "affectsGlobalScope": false
       },
-      "../src/types/types.service.ts": {
-        "version": "e1e2acb901f704aa725125f910f85629b5f5ef1c592c46d53613aa86fb7a8e85",
-        "signature": "7ec12193beccc3d5713c2bde840f506ecf053820dcbeb24d19445ab80211f3ba",
+      "../src/types/types.controller.ts": {
+        "version": "66ae1338d77ad1a1f54bbc04fd5dd9a467474249e82eccf47ba8c825f521acb4",
+        "signature": "d474a2945201122655b191965976c84408584557d96f28913a56408a16ffa4b5",
         "affectsGlobalScope": false
       },
       "../src/types/types.module.ts": {
@@ -6177,11 +6177,14 @@
       ],
       "../src/types/types.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/swagger/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
+        "../node_modules/@types/node/util.d.ts",
+        "../src/schemas/type.schema.ts",
+        "../src/types/types.service.ts"
       ],
       "../src/types/types.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -6197,11 +6200,14 @@
       ],
       "../src/types/types.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/mongoose/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
+        "../node_modules/@types/node/util.d.ts",
+        "../src/schemas/type.schema.ts"
       ]
     },
     "exportedModulesMap": {
@@ -10004,6 +10010,14 @@
         "../node_modules/@types/mongoose/index.d.ts",
         "../src/boxes/boxes.service.ts",
         "../src/schemas/trainer.schema.ts"
+      ],
+      "../src/types/types.controller.ts": [
+        "../src/schemas/type.schema.ts",
+        "../src/types/types.service.ts"
+      ],
+      "../src/types/types.service.ts": [
+        "../node_modules/@types/mongoose/index.d.ts",
+        "../src/schemas/type.schema.ts"
       ]
     },
     "semanticDiagnosticsPerFile": []
