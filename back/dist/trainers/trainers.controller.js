@@ -71,7 +71,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "addBox", null);
 TrainersController = __decorate([
-    ApiTags('trainers'),
+    swagger_1.ApiTags('trainers'),
     common_1.Controller('trainers'),
     __metadata("design:paramtypes", [trainers_service_1.TrainersService])
 ], TrainersController);

@@ -47,7 +47,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TypesController.prototype, "findAll", null);
 TypesController = __decorate([
-    ApiTags('types'),
+    swagger_1.ApiTags('types'),
     common_1.Controller('types'),
     __metadata("design:paramtypes", [types_service_1.TypesService])
 ], TypesController);
