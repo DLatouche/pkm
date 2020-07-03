@@ -18,6 +18,6 @@ export class PokemonsService {
     }
 
     async findAll(): Promise<Pokemon[]> {
-        return await this.pokemonModel.find();
+        return await this.pokemonModel.find().populate("trainer").populate("firstType").populate("secondType");
     }
 }

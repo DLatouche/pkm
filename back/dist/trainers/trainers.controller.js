@@ -42,8 +42,6 @@ let TrainersController = class TrainersController {
         return await this.trainersService.findOneBox(id, idBox);
     }
     async addPokemon(id, idBox, name, firstType, secondType) {
-        console.log('trainers.controller.ts -> 61: firstType', firstType);
-        console.log('trainers.controller.ts -> 61: secondType', secondType);
         if ((firstType == null || firstType.length == 0) && (secondType == null || secondType.length == 0)) {
             throw new common_1.NotFoundException('Type not found.');
         }

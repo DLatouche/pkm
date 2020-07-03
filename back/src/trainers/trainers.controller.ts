@@ -59,8 +59,6 @@ export class TrainersController {
     @ApiResponse({ status: 201, description: 'Return pokemon.', })
     async addPokemon(@Param('id') id: string, @Param('idBox') idBox: string, @Body('name') name: string, 
     @Body('firstType') firstType: string, @Body('secondType') secondType: string): Promise<Pokemon> {
-        console.log('trainers.controller.ts -> 61: firstType', firstType )
-        console.log('trainers.controller.ts -> 61: secondType', secondType )
         if((firstType == null || firstType.length == 0) && (secondType == null || secondType.length == 0)){
             throw new NotFoundException('Type not found.');
         }else{

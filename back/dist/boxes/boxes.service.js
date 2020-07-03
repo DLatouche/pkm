@@ -16,6 +16,7 @@ exports.BoxesService = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("mongoose");
 const box_schema_1 = require("../schemas/box.schema");
+const type_schema_1 = require("../schemas/type.schema");
 const mongoose_2 = require("@nestjs/mongoose");
 let BoxesService = class BoxesService {
     constructor(connection, boxModel) {
@@ -27,7 +28,22 @@ let BoxesService = class BoxesService {
         return createdBox.save();
     }
     async findAll() {
-        return await this.boxModel.find();
+        return await this.boxModel.find().populate("pokemons");
+    }
+    async getSize(id) {
+        return await (await this.boxModel.findById(id)).pokemons.length;
+    }
+    async getType(id) {
+        let types = [];
+        const box = await this.boxModel.findById(id).populate("pokemons");
+        box.pokemons.forEach((pkm) => {
+            var _a, _b, _c, _d;
+            if (((_b = (_a = pkm.firstType) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b._id) && !types.includes(pkm.firstType[0]._id.toString()))
+                types.push(pkm.firstType[0]._id.toString());
+            if (((_d = (_c = pkm.secondType) === null || _c === void 0 ? void 0 : _c[0]) === null || _d === void 0 ? void 0 : _d._id) && !types.includes(pkm.secondType[0]._id.toString()))
+                types.push(pkm.secondType[0]._id.toString());
+        });
+        return types;
     }
 };
 BoxesService = __decorate([

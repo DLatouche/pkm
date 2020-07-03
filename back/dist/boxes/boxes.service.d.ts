@@ -6,4 +6,6 @@ export declare class BoxesService {
     constructor(connection: Connection, boxModel: Model<Box>);
     create(name: string): Promise<Box>;
     findAll(): Promise<Box[]>;
+    getSize(id: string): Promise<number>;
+    getType(id: string): Promise<string[]>;
 }

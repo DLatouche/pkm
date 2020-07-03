@@ -4,6 +4,7 @@ import { Trainer } from 'src/schemas/trainer.schema';
 import { Box } from 'src/schemas/box.schema';
 import { PokemonsService } from 'src/pokemons/pokemons.service';
 import { TypesService } from 'src/types/types.service';
+import { Pokemon } from 'src/schemas/pokemon.schema';
 export declare class TrainersService {
     private connection;
     private readonly trainerModel;
@@ -17,5 +18,5 @@ export declare class TrainersService {
     findById(id: string): Promise<Trainer>;
     findAllBoxes(id: string): Promise<Box[]>;
     findOneBox(trainerId: string, boxId: string): Promise<Box>;
-    addPokemon(trainerId: string, boxId: string, name: string, firstTypeId: string, secondTypeId: string): Promise<import("../schemas/pokemon.schema").Pokemon>;
+    addPokemon(trainerId: string, boxId: string, name: string, firstTypeId: string, secondTypeId: string): Promise<Pokemon>;
 }

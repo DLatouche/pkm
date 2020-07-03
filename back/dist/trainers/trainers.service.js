@@ -21,6 +21,7 @@ const trainer_schema_1 = require("../schemas/trainer.schema");
 const box_schema_1 = require("../schemas/box.schema");
 const pokemons_service_1 = require("../pokemons/pokemons.service");
 const types_service_1 = require("../types/types.service");
+const pokemon_schema_1 = require("../schemas/pokemon.schema");
 let TrainersService = class TrainersService {
     constructor(connection, trainerModel, boxesService, pokemonsService, typesService) {
         this.connection = connection;
@@ -64,34 +65,37 @@ let TrainersService = class TrainersService {
     }
     async findOneBox(trainerId, boxId) {
         const trainer = await this.trainerModel.findById(trainerId).populate({ path: "boxes", match: { _id: boxId } });
-        console.log('trainers.service.ts -> 50: trainer', trainer);
         return trainer.boxes[0];
     }
     async addPokemon(trainerId, boxId, name, firstTypeId, secondTypeId) {
         let promisesType = [];
-        try {
-            if (firstTypeId != null && firstTypeId.length > 0)
-                promisesType.push(this.typesService.findById(firstTypeId));
-            if (secondTypeId != null && secondTypeId.length > 0)
-                promisesType.push(this.typesService.findById(secondTypeId));
-            const types = await Promise.all(promisesType);
-            if (types.length == 0)
-                throw new common_1.NotFoundException('Type not found.');
-            const trainer = await this.findById(trainerId);
-            console.log('trainers.service.ts -> 64: trainer', trainer);
-            let box = await this.findOneBox(trainerId, boxId);
-            console.log('trainers.service.ts -> 66: box', box);
-            let pokemon = await this.pokemonsService.create(name, types, trainer);
-            console.log('trainers.service.ts -> 68: pokemon', pokemon);
-            box.pokemons.push(pokemon);
-            await box.save();
-            console.log('trainers.service.ts -> 71: box', box);
-            return pokemon;
-        }
-        catch (e) {
-            console.log('trainers.service.ts -> 63: error', e);
+        if (firstTypeId != null && firstTypeId.length > 0)
+            promisesType.push(this.typesService.findById(firstTypeId));
+        if (secondTypeId != null && secondTypeId.length > 0)
+            promisesType.push(this.typesService.findById(secondTypeId));
+        const types = await Promise.all(promisesType);
+        if (types.length == 0)
             throw new common_1.NotFoundException('Type not found.');
-        }
+        const trainer = await this.findById(trainerId);
+        if (trainer == null)
+            throw new common_1.NotFoundException('Trainer not found.');
+        let box = await this.findOneBox(trainerId, boxId);
+        if (box == null)
+            throw new common_1.NotFoundException('Box not found.');
+        if (box.pokemons.length >= 24)
+            throw new common_1.ForbiddenException("The pokemon box is full.");
+        const typeOfBox = await this.boxesService.getType(boxId);
+        let nbNotInclude = 0;
+        types.forEach((t) => {
+            if (!typeOfBox.includes(t._id.toString()))
+                nbNotInclude++;
+        });
+        if (nbNotInclude > 2 - typeOfBox.length)
+            throw new common_1.ForbiddenException("The pokemon box has already two different types.");
+        let pokemon = await this.pokemonsService.create(name, types, trainer);
+        box.pokemons.push(pokemon);
+        await box.save();
+        return pokemon;
     }
 };
 TrainersService = __decorate([

@@ -33,7 +33,7 @@ let PokemonsService = class PokemonsService {
         return createdPokemon.save();
     }
     async findAll() {
-        return await this.pokemonModel.find();
+        return await this.pokemonModel.find().populate("trainer").populate("firstType").populate("secondType");
     }
 };
 PokemonsService = __decorate([

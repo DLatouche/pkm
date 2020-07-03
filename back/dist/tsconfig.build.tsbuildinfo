@@ -1532,12 +1532,12 @@
         "affectsGlobalScope": false
       },
       "../src/boxes/boxes.service.ts": {
-        "version": "4c284b62b7ded5065f9b38c1f3cd86f19780b1a66204ed4da5fb8cb5af2ee5e6",
-        "signature": "d9463b4c32aba2e545d1ec0ca30598db03d16fe5b34ecf32fc97fbccc4076724",
+        "version": "3a44f6fe77bb376ae863cbc210be3984a4fe6c558b75e30a124aa97e0faf7863",
+        "signature": "e7520921c9f5dc0580e61c9717e96c748b5c60f21b860bc8df2cf983d9ec3735",
         "affectsGlobalScope": false
       },
       "../src/pokemons/pokemons.service.ts": {
-        "version": "bd143a8412a05193b7aa311cb381571e5de8ec704d9e6b558d76420cfe4bb5d5",
+        "version": "c864c16a01e30d12c6e89780b7d2a7af9af67b24bb91c079f9a9b4be78c83bad",
         "signature": "c2bee212ce061e2a3bf5f83b17cc1babfd339ecf166bc21746b9ecd319724bbd",
         "affectsGlobalScope": false
       },
@@ -1547,8 +1547,8 @@
         "affectsGlobalScope": false
       },
       "../src/trainers/trainers.service.ts": {
-        "version": "c99c8cc45f3e12186844af9d838d66ea5a6763667430e5bd1bb877af500368ac",
-        "signature": "7826ec12550237ee31599c12a351837ff71b9257aca1fbc0ceaa8c9a767cac76",
+        "version": "f0c3c8df5ce43be0ccb5e68ea0b12864f10425ce33b1e6dedc034c0b3bbe4184",
+        "signature": "71ef66df2ced056fa9c4d7dfd4ae1538526b2b7dcabfc7a18ee7093c7aa585e8",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/swagger/dist/decorators/api-basic.decorator.d.ts": {
@@ -1737,7 +1737,7 @@
         "affectsGlobalScope": false
       },
       "../src/trainers/trainers.controller.ts": {
-        "version": "302451d2829046d17bfbcdd1f37d65b7afb9892e6bf40542369e80f8d2e8af47",
+        "version": "38450a2b2562bd1be162fee6dca9779ebf7c6a26226c63f386f3e95677aee995",
         "signature": "70f4e1df983fd2538de7f34728672951781044d9ad3b7c73f324d51774ba64d6",
         "affectsGlobalScope": false
       },
@@ -6057,10 +6057,12 @@
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/os.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../src/schemas/box.schema.ts"
+        "../src/schemas/box.schema.ts",
+        "../src/schemas/type.schema.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
@@ -6187,6 +6189,7 @@
         "../src/boxes/boxes.service.ts",
         "../src/pokemons/pokemons.service.ts",
         "../src/schemas/box.schema.ts",
+        "../src/schemas/pokemon.schema.ts",
         "../src/schemas/trainer.schema.ts",
         "../src/types/types.service.ts"
       ],
