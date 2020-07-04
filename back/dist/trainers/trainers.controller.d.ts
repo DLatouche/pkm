@@ -4,12 +4,13 @@ import { Box } from 'src/schemas/box.schema';
 import { Pokemon } from 'src/schemas/pokemon.schema';
 import { BoxesService } from 'src/boxes/boxes.service';
 import { PokemonsService } from 'src/pokemons/pokemons.service';
+import { CreateTrainerDto } from './dto/createTrainer.dto';
 export declare class TrainersController {
     private trainersService;
     private boxesService;
     private pokemonsService;
     constructor(trainersService: TrainersService, boxesService: BoxesService, pokemonsService: PokemonsService);
-    create(name: string, username: string, password: string): Promise<Trainer>;
+    create(createTrainerDto: CreateTrainerDto): Promise<Trainer>;
     findAll(): Promise<Trainer[]>;
     findById(id: string): Promise<Trainer>;
     addBox(id: string, boxName: string): Promise<Trainer>;

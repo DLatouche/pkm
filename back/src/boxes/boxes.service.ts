@@ -37,8 +37,8 @@ export class BoxesService {
         return
     }
 
-    async deletePokemon(idBox: string, idPokemon: string): Promise<Box> {
-        return await this.boxModel.updateOne({ _id: idBox }, { $pull: { pokemons: idPokemon } }).populate("pokemons");
+    async deletePokemon(idBox: string, idPokemon: string): Promise<Object> {
+        return await this.boxModel.updateOne({ _id: idBox }, { $pull: { pokemons: idPokemon } });
     }
 
     async addPokemon(idBox: string, idPokemon: string): Promise<Box> {

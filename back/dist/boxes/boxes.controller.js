@@ -18,6 +18,7 @@ const boxes_service_1 = require("./boxes.service");
 const box_schema_1 = require("../schemas/box.schema");
 const swagger_1 = require("@nestjs/swagger");
 const pokemon_schema_1 = require("../schemas/pokemon.schema");
+const jwt_auth_guard_1 = require("../auth/jwt-auth.guard");
 let BoxesController = class BoxesController {
     constructor(boxesService) {
         this.boxesService = boxesService;
@@ -39,9 +40,11 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], BoxesController.prototype, "getAll", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Delete(":id/remove/:pokemonId"),
-    swagger_1.ApiOperation({ summary: 'Delete one pokemon on one boxes' }),
-    swagger_1.ApiResponse({ status: 201, description: 'Return object with data of query.' }),
+    swagger_1.ApiBearerAuth(),
+    swagger_1.ApiOperation({ summary: 'Delete one pokemon on one box.' }),
+    swagger_1.ApiResponse({ status: 200, description: 'Object with number of row who is concerned.' }),
     __param(0, common_1.Param('id')), __param(1, common_1.Param('pokemonId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String]),

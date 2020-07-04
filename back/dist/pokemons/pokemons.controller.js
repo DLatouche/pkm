@@ -25,7 +25,7 @@ let PokemonsController = class PokemonsController {
 __decorate([
     common_1.Get(),
     swagger_1.ApiOperation({ summary: 'Get all pokemons.' }),
-    swagger_1.ApiResponse({ status: 201, description: 'All pokemons.' }),
+    swagger_1.ApiResponse({ status: 201, description: 'Array of pokemon.' }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)

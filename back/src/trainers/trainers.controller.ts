@@ -1,11 +1,14 @@
-import { Controller, Post, Get, Body, Param, NotFoundException, Delete, ForbiddenException, Patch } from '@nestjs/common';
+import { Controller, Post, Get, Body, Param, NotFoundException, Delete, ForbiddenException, Patch, UseGuards } from '@nestjs/common';
 import { TrainersService } from './trainers.service';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Trainer } from 'src/schemas/trainer.schema';
+import { ApiOperation, ApiResponse, ApiTags, ApiBearerAuth, ApiProperty, ApiBody } from '@nestjs/swagger';
+import { Trainer, TrainerSchema } from 'src/schemas/trainer.schema';
 import { Box } from 'src/schemas/box.schema';
 import { Pokemon } from 'src/schemas/pokemon.schema';
 import { BoxesService } from 'src/boxes/boxes.service';
 import { PokemonsService } from 'src/pokemons/pokemons.service';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { TrainersModule } from './trainers.module';
+import { CreateTrainerDto } from './dto/createTrainer.dto';
 
 @ApiTags('trainers')
 @Controller('trainers')
@@ -15,26 +18,32 @@ export class TrainersController {
 
     @Post()
     @ApiOperation({ summary: 'Create trainer.' })
-    @ApiResponse({ status: 201, description: 'Return the created trainer.', })
-    async create(@Body('name') name: string, @Body('username') username: string, @Body('password') password: string): Promise<Trainer> {
-        return await this.trainersService.create(name, username, password);
+    @ApiResponse({ status: 201, description: 'Return trainer object.', type: Trainer })
+    async create(@Body() createTrainerDto: CreateTrainerDto): Promise<Trainer> {
+        return await this.trainersService.create(createTrainerDto.name, createTrainerDto.username, createTrainerDto.password);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get()
+    @ApiBearerAuth()
     @ApiOperation({ summary: 'Get all trainers with boxes.' })
     @ApiResponse({ status: 201, description: 'Return all trainers.', })
     async findAll(): Promise<Trainer[]> {
         return await this.trainersService.findAll();
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get(":id")
+    @ApiBearerAuth()
     @ApiOperation({ summary: 'Get one trainers by id with boxes.' })
     @ApiResponse({ status: 201, description: 'Return the trainer.', })
     async findById(@Param('id') id: string): Promise<Trainer> {
         return await this.trainersService.findById(id);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Post(':id/boxes')
+    @ApiBearerAuth()
     @ApiOperation({ summary: 'Add box to trainer.' })
     @ApiResponse({ status: 201, description: 'Return the trainer with his boxes.', })
     async addBox(@Param('id') id: string,
@@ -42,21 +51,27 @@ export class TrainersController {
         return await this.trainersService.addBox(id, boxName);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get(":id/boxes")
+    @ApiBearerAuth()
     @ApiOperation({ summary: 'Get all boxes of trainer.' })
     @ApiResponse({ status: 201, description: 'Return all boxes of trainer.', })
     async getAllBoxes(@Param('id') id: string): Promise<Box[]> {
         return await this.trainersService.findAllBoxes(id);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get(":id/boxes/:idBox")
+    @ApiBearerAuth()
     @ApiOperation({ summary: 'Get one box of trainer.' })
     @ApiResponse({ status: 201, description: 'Return one box of trainer.', })
     async getBox(@Param('id') id: string, @Param('idBox') idBox: string): Promise<Box> {
         return await this.trainersService.findOneBox(id, idBox);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Delete(":id/boxes/:idBox")
+    @ApiBearerAuth()
     @ApiOperation({ summary: 'Delete trainer box' })
     @ApiResponse({ status: 201, description: 'return id of deleted box', })
     @ApiResponse({ status: 402, description: 'Box not empty', })
@@ -67,7 +82,9 @@ export class TrainersController {
         return idBox
     }
 
+    @UseGuards(JwtAuthGuard)
     @Post(":trainerId/boxes/:boxId")
+    @ApiBearerAuth()
     @ApiOperation({ summary: 'Add pokemon from boxOne to boxTwo.' })
     @ApiResponse({ status: 201, description: 'Return pokemon.', })
     async addPokemon(@Param('trainerId') trainerId: string, @Param('boxId') boxId: string,
@@ -82,7 +99,9 @@ export class TrainersController {
 
     }
 
+    @UseGuards(JwtAuthGuard)
     @Post(":id/move")
+    @ApiBearerAuth()
     @ApiOperation({ summary: 'Move pokemon from boxOne to boxTwo.' })
     @ApiResponse({ status: 201, description: 'Return pokemon.', })
     async move(@Param('id') id: string, @Body('pokemonId') pokemonId: string,

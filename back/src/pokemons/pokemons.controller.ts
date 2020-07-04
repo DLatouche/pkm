@@ -11,7 +11,8 @@ export class PokemonsController {
 
     @Get()
     @ApiOperation({ summary: 'Get all pokemons.' })
-    @ApiResponse({ status: 201, description: 'All pokemons.' })
+    @ApiResponse({ status: 201, description: 'Array of pokemon.' })
+    
     async getAll(): Promise<Pokemon[]> {
         return await this.pokemonsService.findAll();
     }

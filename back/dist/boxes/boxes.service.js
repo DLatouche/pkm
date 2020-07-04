@@ -52,7 +52,7 @@ let BoxesService = class BoxesService {
         return;
     }
     async deletePokemon(idBox, idPokemon) {
-        return await this.boxModel.updateOne({ _id: idBox }, { $pull: { pokemons: idPokemon } }).populate("pokemons");
+        return await this.boxModel.updateOne({ _id: idBox }, { $pull: { pokemons: idPokemon } });
     }
     async addPokemon(idBox, idPokemon) {
         const box = await this.boxModel.findById(idBox);

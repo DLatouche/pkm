@@ -11,6 +11,6 @@ export declare class BoxesService {
     getSize(id: string): Promise<number>;
     getType(id: string): Promise<string[]>;
     delete(id: string): Promise<void>;
-    deletePokemon(idBox: string, idPokemon: string): Promise<Box>;
+    deletePokemon(idBox: string, idPokemon: string): Promise<Object>;
     addPokemon(idBox: string, idPokemon: string): Promise<Box>;
 }

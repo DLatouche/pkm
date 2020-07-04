@@ -1147,7 +1147,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.service.ts": {
-        "version": "d175ebab475f54556704ee36587774e84360e92db626b53eaaf66d4951ababa6",
+        "version": "cfd6b37523ded60fbe4301cb126f88f712e338bbe65ed0dad64cba3b818a4dd3",
         "signature": "2386daedc1c47a9fb94925195a2ac3be1781c27d2920d676d81d8ef4d82fe4a3",
         "affectsGlobalScope": false
       },
@@ -1497,7 +1497,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/local-auth.guard.ts": {
-        "version": "6bc17af75dca5231de546f9177d6785a30378b3048286892534d4834516e62f4",
+        "version": "7e2fac88dfeae41bb3fc9238e1e41370da76b30f239a458bd42e780b70919a59",
         "signature": "de00899ee8403ca6d4ac89938059031acd4e52dd417186b11c3803fd1e2247ba",
         "affectsGlobalScope": false
       },
@@ -1607,93 +1607,8 @@
         "affectsGlobalScope": false
       },
       "../src/schemas/type.schema.ts": {
-        "version": "dec07237d74acde293c931978f47429823c968d7732787ecb513d9b50cc32fc6",
-        "signature": "59907687a8d4854c922687fd84b1a376fd7f3c443d4ee406f79f7d556ada98ec",
-        "affectsGlobalScope": false
-      },
-      "../src/schemas/trainer.schema.ts": {
-        "version": "a6f91209e40bf32854ac223d1dbe691ca9835720226889bdacedc55cb010372c",
-        "signature": "b4a7cc10fcc465cefbd6d8a7314853ff67c30bdea03cb482a10768ffc523000e",
-        "affectsGlobalScope": false
-      },
-      "../src/schemas/pokemon.schema.ts": {
-        "version": "6250fb629ffa028873a506b975cf521b77a8c1f19ea4ff72126e50001c5b092b",
-        "signature": "a69852b6e78210e9a6c55e228a9a4f491fd47efa86b2659a2ea0902a929d63c1",
-        "affectsGlobalScope": false
-      },
-      "../src/schemas/box.schema.ts": {
-        "version": "35c5947fb264d1a86159d67e104e2f509dc8655b5967b188846b613eb58dc3df",
-        "signature": "75aec0b527bc697d76cced425b81790061d2b7a0844d2e9620e2c007e8fb1ef4",
-        "affectsGlobalScope": false
-      },
-      "../src/pokemons/pokemons.service.ts": {
-        "version": "d96de3809ba9eb8ee26c8c2f9128e5e34f91cc56dd8c9ef2bf8dc6cd00dafea4",
-        "signature": "7d0e78d93f01acfb12cf81cfb882110072adf0278a71472e4b4c905cc078c4f0",
-        "affectsGlobalScope": false
-      },
-      "../src/boxes/boxes.service.ts": {
-        "version": "5a5d34219935c17be02ff510c66e0cef207c998f8ed1bab38183d451c4461a26",
-        "signature": "475de773f045aa57cacbae7b0ea0677bae092aaac86f6c94b5725b00a5491e8f",
-        "affectsGlobalScope": false
-      },
-      "../src/types/types.service.ts": {
-        "version": "15fcc6f4c2884dcfee024030bd758699d7995a31812ae7d7911ebf8ff904970a",
-        "signature": "8d892626651136d767f8f411b10bc4e8256a0ab1b7e57ab38d4d2c0dd980b7be",
-        "affectsGlobalScope": false
-      },
-      "../src/trainers/trainers.service.ts": {
-        "version": "0b685073f5f33dba6be7b448b085e1a824f3b494294b049fa9331bbe23f3c060",
-        "signature": "8e41cc450e9aa5cc042316ceed00cb6cf28c6691fdce66498a98c3e0c755631e",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/jsonwebtoken/index.d.ts": {
-        "version": "ed2e832899b97594aebebb6f4e29124156d85edad0c4764d3b8a3e5ad1db7eb5",
-        "signature": "ed2e832899b97594aebebb6f4e29124156d85edad0c4764d3b8a3e5ad1db7eb5",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": {
-        "version": "b0d13187d80ad7ba46537913f1458c4bd3778ffde916a4673c2df5f479c8be15",
-        "signature": "b0d13187d80ad7ba46537913f1458c4bd3778ffde916a4673c2df5f479c8be15",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": {
-        "version": "7c14e702387296711c1a829bc95052ff02f533d4aa27d53cc0186c795094a3a9",
-        "signature": "7c14e702387296711c1a829bc95052ff02f533d4aa27d53cc0186c795094a3a9",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": {
-        "version": "579f8828da42ae02db6915a0223d23b0da07157ff484fecdbf8a96fffa0fa4df",
-        "signature": "579f8828da42ae02db6915a0223d23b0da07157ff484fecdbf8a96fffa0fa4df",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": {
-        "version": "1695b64f0130b6aef2c1eb7cecc1d9339bf2181af887ce5ccc6c3075115d6355",
-        "signature": "1695b64f0130b6aef2c1eb7cecc1d9339bf2181af887ce5ccc6c3075115d6355",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/jwt/dist/index.d.ts": {
-        "version": "a13aac535101a942283e3d00bce50f483bfa9bed6e1f8dfda33a3bb072498776",
-        "signature": "a13aac535101a942283e3d00bce50f483bfa9bed6e1f8dfda33a3bb072498776",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/jwt/index.d.ts": {
-        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
-        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
-        "affectsGlobalScope": false
-      },
-      "../src/auth/auth.service.ts": {
-        "version": "1753a128d61662cad05638026d251a85092e4fa862b8fa8b9a5510ab7fb7c039",
-        "signature": "dde4c43e1d459ecc21d86803409c3e933f0699281de6f9a043301479cdcdae4f",
-        "affectsGlobalScope": false
-      },
-      "../src/auth/jwt-auth.guard.ts": {
-        "version": "51fc903ffa25cb72c7ecc1aa1fed8c9d5bf7c6dd2f7f0efe9d5fa1d7490b020c",
-        "signature": "baf608b3f1bf90782d8b003287213bceae5e9b31f56c2ce676e223ea85ea10b2",
-        "affectsGlobalScope": false
-      },
-      "../src/app.controller.ts": {
-        "version": "4819f02f97faf49076251e27835df8732f8b769670ee0fbf8b8106ccca7c959b",
-        "signature": "39aa869fe19b256be57947f5c1dd88a91c2a9fcd1edce64e1f4ca3855afafd73",
+        "version": "a09ceef76cccdf5d80b6ba1d47f68ca5f855bbbd9f4f28faac659e8455a73126",
+        "signature": "8f92179ca0508a0daaba24efa9d0f801c3ccbf0619d806be3e7fee239d997f29",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/swagger/dist/decorators/api-basic.decorator.d.ts": {
@@ -1881,18 +1796,108 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
+      "../src/schemas/trainer.schema.ts": {
+        "version": "8fab5a3ec0665ca06fbd37ab1614d69bdebd9f0d72cd008fae37abc34313cb5b",
+        "signature": "d9018bf78dd68d6eecaa18190fbc3d87dd10149b63faf118c2ba5741d7a2b7d2",
+        "affectsGlobalScope": false
+      },
+      "../src/schemas/pokemon.schema.ts": {
+        "version": "14c8eb2928a006474590ae1ac0f1546d0a50a2f77223fed2fd2dc1c1e6bf9740",
+        "signature": "59f90d9878e3973f1adc0d06ce2205d1a03172ce6560faa7e200617954f2b142",
+        "affectsGlobalScope": false
+      },
+      "../src/schemas/box.schema.ts": {
+        "version": "1ffbe4f47837555775445e4323205d44bbb10a5aede7d63be1bb3e7695feaba6",
+        "signature": "a8226bf41ac0a876e32b79f2ae155a4b0d2ac6844d7d84420f2abe763ce7819e",
+        "affectsGlobalScope": false
+      },
+      "../src/pokemons/pokemons.service.ts": {
+        "version": "d96de3809ba9eb8ee26c8c2f9128e5e34f91cc56dd8c9ef2bf8dc6cd00dafea4",
+        "signature": "7d0e78d93f01acfb12cf81cfb882110072adf0278a71472e4b4c905cc078c4f0",
+        "affectsGlobalScope": false
+      },
+      "../src/boxes/boxes.service.ts": {
+        "version": "198bee5eb509b0384d5db56b8e4cf9dfdd22a714f1f53bf5e53e3e0b0f815934",
+        "signature": "5b8a5943dfe877aa51741f414ae1f1b821b7e2c8768134cecdfd190048e87786",
+        "affectsGlobalScope": false
+      },
+      "../src/types/types.service.ts": {
+        "version": "15fcc6f4c2884dcfee024030bd758699d7995a31812ae7d7911ebf8ff904970a",
+        "signature": "8d892626651136d767f8f411b10bc4e8256a0ab1b7e57ab38d4d2c0dd980b7be",
+        "affectsGlobalScope": false
+      },
+      "../src/trainers/trainers.service.ts": {
+        "version": "bb7859fdea1ba5e7b00d84d8d7beb1016ccbb30cbef0d1f407af51c6c3d3222a",
+        "signature": "8e41cc450e9aa5cc042316ceed00cb6cf28c6691fdce66498a98c3e0c755631e",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/jsonwebtoken/index.d.ts": {
+        "version": "ed2e832899b97594aebebb6f4e29124156d85edad0c4764d3b8a3e5ad1db7eb5",
+        "signature": "ed2e832899b97594aebebb6f4e29124156d85edad0c4764d3b8a3e5ad1db7eb5",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": {
+        "version": "b0d13187d80ad7ba46537913f1458c4bd3778ffde916a4673c2df5f479c8be15",
+        "signature": "b0d13187d80ad7ba46537913f1458c4bd3778ffde916a4673c2df5f479c8be15",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": {
+        "version": "7c14e702387296711c1a829bc95052ff02f533d4aa27d53cc0186c795094a3a9",
+        "signature": "7c14e702387296711c1a829bc95052ff02f533d4aa27d53cc0186c795094a3a9",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": {
+        "version": "579f8828da42ae02db6915a0223d23b0da07157ff484fecdbf8a96fffa0fa4df",
+        "signature": "579f8828da42ae02db6915a0223d23b0da07157ff484fecdbf8a96fffa0fa4df",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": {
+        "version": "1695b64f0130b6aef2c1eb7cecc1d9339bf2181af887ce5ccc6c3075115d6355",
+        "signature": "1695b64f0130b6aef2c1eb7cecc1d9339bf2181af887ce5ccc6c3075115d6355",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/index.d.ts": {
+        "version": "a13aac535101a942283e3d00bce50f483bfa9bed6e1f8dfda33a3bb072498776",
+        "signature": "a13aac535101a942283e3d00bce50f483bfa9bed6e1f8dfda33a3bb072498776",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/index.d.ts": {
+        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/auth.service.ts": {
+        "version": "b0425559fcb14b644105d3f77b2de6e77b9176cdbf1a210b778ce3d1707d0467",
+        "signature": "dde4c43e1d459ecc21d86803409c3e933f0699281de6f9a043301479cdcdae4f",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/jwt-auth.guard.ts": {
+        "version": "86f01fc8f2c8dc7a5d29859dee9467ccb4a7611fc82a79beee69fc71efce4308",
+        "signature": "baf608b3f1bf90782d8b003287213bceae5e9b31f56c2ce676e223ea85ea10b2",
+        "affectsGlobalScope": false
+      },
+      "../src/app.controller.ts": {
+        "version": "3bcfddde88b92ce663438b4a80142c133a4c4f4ce122731a2d2ae2efaf16cebb",
+        "signature": "deba0adaa3bfd4a049c492660cf8b277ea45aa46cd536cb4d9bd3e96b65098a9",
+        "affectsGlobalScope": false
+      },
+      "../src/trainers/dto/createtrainer.dto.ts": {
+        "version": "433099a2d06f69d0c3cfbaa223e3f2e8e60cba69d746dd5d473bb14811c481fb",
+        "signature": "e08214bf484f3a10bee66ff9a0333480ad230ff1785d7468d629179c0f753e33",
+        "affectsGlobalScope": false
+      },
       "../src/trainers/trainers.controller.ts": {
-        "version": "3c7663924caa1900d6d883b1789092cde798e743b7029ebbc421fa71113d25b8",
-        "signature": "7d18b9ef4056ba18a2b05b66ea8ccfc809290d03eb75e6e6c51b41d746da0d7e",
+        "version": "a52f4a01ad8dbd27ba3eb0245f2ac93bf1095ba538eb35873e5e26f5f9d8f5a5",
+        "signature": "b7b5b5b82bb2fe3809b1740e6ca6217817c1695f36281ba5ac6244a4246040e5",
         "affectsGlobalScope": false
       },
       "../src/boxes/boxes.controller.ts": {
-        "version": "999e29872f6ca1c9aa6235b1a233f97648af6cd88bbf0c954d016b92d0c4bc38",
+        "version": "cfdc69bf1a93d09cc79b6367d87d102db40a7115becf7aa598af63d21eb867dd",
         "signature": "19559fcf8ccc2855d040e2633d4e8d8b8b53477da21dc1d48bcc8146ecdff2f9",
         "affectsGlobalScope": false
       },
       "../src/pokemons/pokemons.controller.ts": {
-        "version": "ce9a744d0c44c9f4e94c258fcdf142d0520431f553895df0322e639f9a96e566",
+        "version": "eab2b3d66a1d90896cded5881c5e4fa94bba73f619bcd3e616563478bbe1c938",
         "signature": "c2281d7f9e9afef89b43f885b3b60238c25febc106785a6c8108ddff2b95ed7f",
         "affectsGlobalScope": false
       },
@@ -1917,7 +1922,7 @@
         "affectsGlobalScope": false
       },
       "../src/trainers/trainers.module.ts": {
-        "version": "b39d5f227bc3a41f9dc0934594250b1955dbd885837d59ef408b9ae0057791b3",
+        "version": "6a18d7717cfb127e5cf4c143c51cf9dbee8a8db2cdb60e0c1c5baed2e9f2c3f1",
         "signature": "bb0ba2378251c73027f3e3074dbcf40bd4e1570e5b43911aeb17e0fe752d8bba",
         "affectsGlobalScope": false
       },
@@ -1932,12 +1937,12 @@
         "affectsGlobalScope": false
       },
       "../src/auth/local.strategy.ts": {
-        "version": "5e75acd65c9c672554c837299751bf109caf9fc7289b9fcf8a091fe14bad96fa",
+        "version": "04e890d6112c44710a913225b7a096e84795a6ea9a76ef1d288ac2f1ad6fa9c8",
         "signature": "0e8255edbee2a2bacfd3d9fb362c970a8f191e980f9eb20110301e1a36a37898",
         "affectsGlobalScope": false
       },
       "../src/auth/constants.ts": {
-        "version": "56d001dfba32462ffd9b114ad8795517a8923507b23ce31b25fcea9efcdeb614",
+        "version": "1065239c3a1f249a3a81a4f143a5d86c1c056f0ff2a60bf4467d11fc8ef3d265",
         "signature": "541603c0913bf3791cdca6f10c3bcd0042e5858974e191e345bfecb3523124fb",
         "affectsGlobalScope": false
       },
@@ -1947,17 +1952,17 @@
         "affectsGlobalScope": false
       },
       "../src/auth/jwt.strategy.ts": {
-        "version": "7b08542b86453f402c61681b627ad6b03e8ab458e4a6511fe365eb5be275658a",
+        "version": "ac009c95fdbab6e5e0e154a6f095e6e2850687e5754272de8736e5dd1ce8c787",
         "signature": "056039d196bfd8a686b09d51785a638f89b8c048757e4bd020230353a78c82af",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.module.ts": {
-        "version": "c9df587e7d0aa1cb0fdd2bbd9160bafb9e5b3d32eeccb1a2c23fc1ad80a00601",
+        "version": "180ea1ed20f4cf959ae96d9b54320535718759c805e062cc50b903f2b42f4b43",
         "signature": "2e5d258cf85349b02b015c3f1b8873c152d182c3819a7ccc3aff16fc3037a5fc",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "a5bd29f804e207d58cf3b73ac676f37ce01a0e57237378b40dcae18033226d3a",
+        "version": "aa42799626029324d3ae4e3ae7c0026b922b0023b7392a9b8826ad2d8d9e22e3",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -6327,6 +6332,7 @@
       "../src/app.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
+        "../node_modules/@nestjs/swagger/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6441,6 +6447,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
+        "../src/auth/jwt-auth.guard.ts",
         "../src/boxes/boxes.service.ts",
         "../src/schemas/box.schema.ts",
         "../src/schemas/pokemon.schema.ts"
@@ -6518,6 +6525,7 @@
         "../src/schemas/type.schema.ts"
       ],
       "../src/schemas/box.schema.ts": [
+        "../node_modules/@nestjs/mongoose/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -6539,17 +6547,27 @@
       ],
       "../src/schemas/trainer.schema.ts": [
         "../node_modules/@nestjs/mongoose/index.d.ts",
+        "../node_modules/@nestjs/swagger/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/os.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../src/schemas/box.schema.ts"
       ],
       "../src/schemas/type.schema.ts": [
+        "../node_modules/@nestjs/mongoose/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/mongoose/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/trainers/dto/createtrainer.dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
@@ -6563,11 +6581,14 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
+        "../src/auth/jwt-auth.guard.ts",
         "../src/boxes/boxes.service.ts",
         "../src/pokemons/pokemons.service.ts",
         "../src/schemas/box.schema.ts",
         "../src/schemas/pokemon.schema.ts",
         "../src/schemas/trainer.schema.ts",
+        "../src/trainers/dto/createtrainer.dto.ts",
+        "../src/trainers/trainers.module.ts",
         "../src/trainers/trainers.service.ts"
       ],
       "../src/trainers/trainers.module.ts": [
@@ -10652,6 +10673,7 @@
         "../src/schemas/box.schema.ts",
         "../src/schemas/pokemon.schema.ts",
         "../src/schemas/trainer.schema.ts",
+        "../src/trainers/dto/createtrainer.dto.ts",
         "../src/trainers/trainers.service.ts"
       ],
       "../src/trainers/trainers.service.ts": [

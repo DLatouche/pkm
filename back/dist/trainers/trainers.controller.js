@@ -21,14 +21,16 @@ const box_schema_1 = require("../schemas/box.schema");
 const pokemon_schema_1 = require("../schemas/pokemon.schema");
 const boxes_service_1 = require("../boxes/boxes.service");
 const pokemons_service_1 = require("../pokemons/pokemons.service");
+const jwt_auth_guard_1 = require("../auth/jwt-auth.guard");
+const createTrainer_dto_1 = require("./dto/createTrainer.dto");
 let TrainersController = class TrainersController {
     constructor(trainersService, boxesService, pokemonsService) {
         this.trainersService = trainersService;
         this.boxesService = boxesService;
         this.pokemonsService = pokemonsService;
     }
-    async create(name, username, password) {
-        return await this.trainersService.create(name, username, password);
+    async create(createTrainerDto) {
+        return await this.trainersService.create(createTrainerDto.name, createTrainerDto.username, createTrainerDto.password);
     }
     async findAll() {
         return await this.trainersService.findAll();
@@ -78,14 +80,16 @@ let TrainersController = class TrainersController {
 __decorate([
     common_1.Post(),
     swagger_1.ApiOperation({ summary: 'Create trainer.' }),
-    swagger_1.ApiResponse({ status: 201, description: 'Return the created trainer.', }),
-    __param(0, common_1.Body('name')), __param(1, common_1.Body('username')), __param(2, common_1.Body('password')),
+    swagger_1.ApiResponse({ status: 201, description: 'Return trainer object.', type: trainer_schema_1.Trainer }),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, String, String]),
+    __metadata("design:paramtypes", [createTrainer_dto_1.CreateTrainerDto]),
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "create", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Get(),
+    swagger_1.ApiBearerAuth(),
     swagger_1.ApiOperation({ summary: 'Get all trainers with boxes.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return all trainers.', }),
     __metadata("design:type", Function),
@@ -93,7 +97,9 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "findAll", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Get(":id"),
+    swagger_1.ApiBearerAuth(),
     swagger_1.ApiOperation({ summary: 'Get one trainers by id with boxes.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return the trainer.', }),
     __param(0, common_1.Param('id')),
@@ -102,7 +108,9 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "findById", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Post(':id/boxes'),
+    swagger_1.ApiBearerAuth(),
     swagger_1.ApiOperation({ summary: 'Add box to trainer.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return the trainer with his boxes.', }),
     __param(0, common_1.Param('id')),
@@ -112,7 +120,9 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "addBox", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Get(":id/boxes"),
+    swagger_1.ApiBearerAuth(),
     swagger_1.ApiOperation({ summary: 'Get all boxes of trainer.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return all boxes of trainer.', }),
     __param(0, common_1.Param('id')),
@@ -121,7 +131,9 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "getAllBoxes", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Get(":id/boxes/:idBox"),
+    swagger_1.ApiBearerAuth(),
     swagger_1.ApiOperation({ summary: 'Get one box of trainer.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return one box of trainer.', }),
     __param(0, common_1.Param('id')), __param(1, common_1.Param('idBox')),
@@ -130,7 +142,9 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "getBox", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Delete(":id/boxes/:idBox"),
+    swagger_1.ApiBearerAuth(),
     swagger_1.ApiOperation({ summary: 'Delete trainer box' }),
     swagger_1.ApiResponse({ status: 201, description: 'return id of deleted box', }),
     swagger_1.ApiResponse({ status: 402, description: 'Box not empty', }),
@@ -140,7 +154,9 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "deleteBox", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Post(":trainerId/boxes/:boxId"),
+    swagger_1.ApiBearerAuth(),
     swagger_1.ApiOperation({ summary: 'Add pokemon from boxOne to boxTwo.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return pokemon.', }),
     __param(0, common_1.Param('trainerId')), __param(1, common_1.Param('boxId')),
@@ -150,7 +166,9 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TrainersController.prototype, "addPokemon", null);
 __decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
     common_1.Post(":id/move"),
+    swagger_1.ApiBearerAuth(),
     swagger_1.ApiOperation({ summary: 'Move pokemon from boxOne to boxTwo.' }),
     swagger_1.ApiResponse({ status: 201, description: 'Return pokemon.', }),
     __param(0, common_1.Param('id')), __param(1, common_1.Body('pokemonId')),

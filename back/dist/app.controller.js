@@ -17,7 +17,7 @@ const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
 const local_auth_guard_1 = require("./auth/local-auth.guard");
 const auth_service_1 = require("./auth/auth.service");
-const jwt_auth_guard_1 = require("./auth/jwt-auth.guard");
+const swagger_1 = require("@nestjs/swagger");
 let AppController = class AppController {
     constructor(appService, authService) {
         this.appService = appService;
@@ -26,35 +26,19 @@ let AppController = class AppController {
     async login(req) {
         return this.authService.login(req.user);
     }
-    home() {
-        return "Everybody can access to it !";
-    }
-    logged() {
-        return "We need to be logged to access to it !";
-    }
 };
 __decorate([
     common_1.UseGuards(local_auth_guard_1.LocalAuthGuard),
     common_1.Post('auth/login'),
+    swagger_1.ApiOperation({ summary: 'To log user.' }),
+    swagger_1.ApiResponse({ status: 201, description: 'Return access token.', type: String }),
     __param(0, common_1.Request()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "login", null);
-__decorate([
-    common_1.Get(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], AppController.prototype, "home", null);
-__decorate([
-    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
-    common_1.Get("logged"),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], AppController.prototype, "logged", null);
 AppController = __decorate([
+    swagger_1.ApiTags('Home'),
     common_1.Controller(),
     __metadata("design:paramtypes", [app_service_1.AppService, auth_service_1.AuthService])
 ], AppController);

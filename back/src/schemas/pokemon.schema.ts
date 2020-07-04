@@ -3,17 +3,39 @@ import * as mongoose from 'mongoose';
 import { Type } from './type.schema';
 import { Trainer } from './trainer.schema';
 
-export const PokemonSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    firstType: [{ type: mongoose.Schema.Types.ObjectId, ref: 'type' }],
-    secondType: [{ type: mongoose.Schema.Types.ObjectId, ref: 'type' }],
-    trainer: [{ type: mongoose.Schema.Types.ObjectId, ref: 'trainer' }]
-})
+// export const PokemonSchema = new mongoose.Schema({
+//     name: { type: String, required: true },
+//     firstType: [{ type: mongoose.Schema.Types.ObjectId, ref: 'type' }],
+//     secondType: [{ type: mongoose.Schema.Types.ObjectId, ref: 'type' }],
+//     trainer: [{ type: mongoose.Schema.Types.ObjectId, ref: 'trainer' }]
+// })
 
-export interface Pokemon extends mongoose.Document {
+// export interface Pokemon extends mongoose.Document {
+//     id: string;
+//     name: string;
+//     firstType: Type;
+//     secondType: Type;
+//     trainer: Trainer;
+// }
+
+
+@Schema()
+export class Pokemon extends mongoose.Document {
+    @Prop()
     id: string;
+
+    @Prop()
+    @Prop({ required: true })
     name: string;
+
+    @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'type' })
     firstType: Type;
+
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'type' })
     secondType: Type;
+
+    @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'trainer' })
     trainer: Trainer;
 }
+
+export const PokemonSchema = SchemaFactory.createForClass(Pokemon)
