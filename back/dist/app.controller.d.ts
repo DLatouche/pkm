@@ -7,5 +7,6 @@ export declare class AppController {
     login(req: any): Promise<{
         access_token: string;
     }>;
-    getHello(): string;
+    home(): string;
+    logged(): string;
 }

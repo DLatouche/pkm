@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
 const local_auth_guard_1 = require("./auth/local-auth.guard");
 const auth_service_1 = require("./auth/auth.service");
+const jwt_auth_guard_1 = require("./auth/jwt-auth.guard");
 let AppController = class AppController {
     constructor(appService, authService) {
         this.appService = appService;
@@ -25,8 +26,11 @@ let AppController = class AppController {
     async login(req) {
         return this.authService.login(req.user);
     }
-    getHello() {
-        return this.appService.getHello();
+    home() {
+        return "Everybody can access to it !";
+    }
+    logged() {
+        return "We need to be logged to access to it !";
     }
 };
 __decorate([
@@ -42,7 +46,14 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
-], AppController.prototype, "getHello", null);
+], AppController.prototype, "home", null);
+__decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
+    common_1.Get("logged"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], AppController.prototype, "logged", null);
 AppController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [app_service_1.AppService, auth_service_1.AuthService])

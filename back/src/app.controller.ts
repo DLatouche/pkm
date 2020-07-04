@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import { AuthGuard } from '@nestjs/passport';
 import { LocalAuthGuard } from './auth/local-auth.guard';
 import { AuthService } from './auth/auth.service';
+import { JwtAuthGuard } from './auth/jwt-auth.guard';
 
 @Controller()
 export class AppController {
@@ -15,9 +16,14 @@ export class AppController {
   }
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  home(): string {
+    return "Everybody can access to it !"
   }
 
+  @UseGuards(JwtAuthGuard)
+  @Get("logged")
+  logged(): string {
+    return "We need to be logged to access to it !"
+  }
 
 }
