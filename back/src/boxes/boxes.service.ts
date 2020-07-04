@@ -3,10 +3,11 @@ import { Connection, Model } from 'mongoose';
 import { Box } from 'src/schemas/box.schema';
 import { Type } from 'src/schemas/type.schema';
 import { InjectModel, InjectConnection } from '@nestjs/mongoose';
+import { PokemonsService } from 'src/pokemons/pokemons.service';
 
 @Injectable()
 export class BoxesService {
-    constructor(@InjectConnection() private connection: Connection, @InjectModel("box") private readonly boxModel: Model<Box>) { }
+    constructor(@InjectConnection() private connection: Connection, @InjectModel("box") private readonly boxModel: Model<Box>, private pokemonsService: PokemonsService) { }
 
     async create(name: string): Promise<Box> {
         const createdBox = new this.boxModel({ name: name });
@@ -34,5 +35,17 @@ export class BoxesService {
     async delete(id: string): Promise<void> {
         await this.boxModel.deleteOne({ _id: id });
         return
+    }
+
+    async deletePokemon(idBox: string, idPokemon: string): Promise<Box> {
+        return await this.boxModel.updateOne({ _id: idBox }, { $pull: { pokemons: idPokemon } }).populate("pokemons");
+    }
+
+    async addPokemon(idBox: string, idPokemon: string): Promise<Box> {
+        const box = await this.boxModel.findById(idBox);
+        const pokemon = await this.pokemonsService.findById(idPokemon);
+        box.pokemons.push(pokemon);
+        await box.save();
+        return box;
     }
 }

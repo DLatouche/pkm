@@ -11,5 +11,4 @@ export interface Box extends mongoose.Document {
     id: string;
     name: string;
     pokemons: Pokemon[];
-
 }

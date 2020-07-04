@@ -12,11 +12,12 @@ const boxes_controller_1 = require("./boxes.controller");
 const boxes_service_1 = require("./boxes.service");
 const mongoose_1 = require("@nestjs/mongoose");
 const box_schema_1 = require("../schemas/box.schema");
+const pokemons_module_1 = require("../pokemons/pokemons.module");
 let BoxesModule = class BoxesModule {
 };
 BoxesModule = __decorate([
     common_1.Module({
-        imports: [mongoose_1.MongooseModule.forFeature([{ name: "box", schema: box_schema_1.BoxSchema }])],
+        imports: [mongoose_1.MongooseModule.forFeature([{ name: "box", schema: box_schema_1.BoxSchema }]), pokemons_module_1.PokemonsModule],
         controllers: [boxes_controller_1.BoxesController],
         providers: [boxes_service_1.BoxesService],
         exports: [boxes_service_1.BoxesService]

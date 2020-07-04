@@ -8,4 +8,5 @@ export declare class PokemonsService {
     constructor(connection: Connection, pokemonModel: Model<Pokemon>);
     create(name: string, types: Type[], trainer: Trainer): Promise<Pokemon>;
     findAll(): Promise<Pokemon[]>;
+    findById(id: string): Promise<Pokemon>;
 }

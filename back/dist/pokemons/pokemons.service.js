@@ -35,6 +35,9 @@ let PokemonsService = class PokemonsService {
     async findAll() {
         return await this.pokemonModel.find().populate("trainer").populate("firstType").populate("secondType");
     }
+    async findById(id) {
+        return await this.pokemonModel.findById(id);
+    }
 };
 PokemonsService = __decorate([
     common_1.Injectable(),

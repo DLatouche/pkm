@@ -18,10 +18,12 @@ const mongoose_1 = require("mongoose");
 const box_schema_1 = require("../schemas/box.schema");
 const type_schema_1 = require("../schemas/type.schema");
 const mongoose_2 = require("@nestjs/mongoose");
+const pokemons_service_1 = require("../pokemons/pokemons.service");
 let BoxesService = class BoxesService {
-    constructor(connection, boxModel) {
+    constructor(connection, boxModel, pokemonsService) {
         this.connection = connection;
         this.boxModel = boxModel;
+        this.pokemonsService = pokemonsService;
     }
     async create(name) {
         const createdBox = new this.boxModel({ name: name });
@@ -49,11 +51,21 @@ let BoxesService = class BoxesService {
         await this.boxModel.deleteOne({ _id: id });
         return;
     }
+    async deletePokemon(idBox, idPokemon) {
+        return await this.boxModel.updateOne({ _id: idBox }, { $pull: { pokemons: idPokemon } }).populate("pokemons");
+    }
+    async addPokemon(idBox, idPokemon) {
+        const box = await this.boxModel.findById(idBox);
+        const pokemon = await this.pokemonsService.findById(idPokemon);
+        box.pokemons.push(pokemon);
+        await box.save();
+        return box;
+    }
 };
 BoxesService = __decorate([
     common_1.Injectable(),
     __param(0, mongoose_2.InjectConnection()), __param(1, mongoose_2.InjectModel("box")),
-    __metadata("design:paramtypes", [mongoose_1.Connection, mongoose_1.Model])
+    __metadata("design:paramtypes", [mongoose_1.Connection, mongoose_1.Model, pokemons_service_1.PokemonsService])
 ], BoxesService);
 exports.BoxesService = BoxesService;
 //# sourceMappingURL=boxes.service.js.map
