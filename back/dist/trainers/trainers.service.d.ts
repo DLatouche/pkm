@@ -14,6 +14,7 @@ export declare class TrainersService {
     constructor(connection: Connection, trainerModel: Model<Trainer>, boxesService: BoxesService, pokemonsService: PokemonsService, typesService: TypesService);
     create(name: string, username: string, password: string): Promise<Trainer>;
     findAll(): Promise<Trainer[]>;
+    findByUsername(username: string): Promise<Trainer>;
     addBox(id: string, name: string): Promise<Trainer>;
     findById(id: string): Promise<Trainer>;
     findAllBoxes(id: string): Promise<Box[]>;

@@ -13,12 +13,18 @@ export class TrainersService {
     constructor(@InjectConnection() private connection: Connection, @InjectModel("trainer") private readonly trainerModel: Model<Trainer>, private boxesService: BoxesService, private pokemonsService: PokemonsService, private typesService: TypesService) { }
 
     async create(name: string, username: string, password: string): Promise<Trainer> {
+        const testTrainer = await this.trainerModel.findOne({ username: username })
+        if (testTrainer) throw new ForbiddenException("Trainer already exist");
         const createdTrainer = new this.trainerModel({ name: name, username: username, password: password });
         return createdTrainer.save();
     }
 
     async findAll(): Promise<Trainer[]> {
         return await this.trainerModel.find().populate("boxes");
+    }
+
+    async findByUsername(username: string): Promise<Trainer> {
+        return this.trainerModel.findOne({ username: username });
     }
 
     async addBox(id: string, name: string): Promise<Trainer> {

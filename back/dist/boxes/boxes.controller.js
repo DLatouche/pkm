@@ -41,7 +41,7 @@ __decorate([
 __decorate([
     common_1.Delete(":id/remove/:pokemonId"),
     swagger_1.ApiOperation({ summary: 'Delete one pokemon on one boxes' }),
-    swagger_1.ApiResponse({ status: 201, description: 'Pokemon deleted.' }),
+    swagger_1.ApiResponse({ status: 201, description: 'Return object with data of query.' }),
     __param(0, common_1.Param('id')), __param(1, common_1.Param('pokemonId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String]),

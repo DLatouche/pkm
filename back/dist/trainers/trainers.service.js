@@ -31,11 +31,17 @@ let TrainersService = class TrainersService {
         this.typesService = typesService;
     }
     async create(name, username, password) {
+        const testTrainer = await this.trainerModel.findOne({ username: username });
+        if (testTrainer)
+            throw new common_1.ForbiddenException("Trainer already exist");
         const createdTrainer = new this.trainerModel({ name: name, username: username, password: password });
         return createdTrainer.save();
     }
     async findAll() {
         return await this.trainerModel.find().populate("boxes");
+    }
+    async findByUsername(username) {
+        return this.trainerModel.findOne({ username: username });
     }
     async addBox(id, name) {
         let trainer;
