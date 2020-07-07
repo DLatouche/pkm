@@ -21,20 +21,19 @@ __decorate([
     __metadata("design:type", String)
 ], Pokemon.prototype, "id", void 0);
 __decorate([
-    mongoose_1.Prop(),
     mongoose_1.Prop({ required: true }),
     __metadata("design:type", String)
 ], Pokemon.prototype, "name", void 0);
 __decorate([
-    mongoose_1.Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'type' }),
+    mongoose_1.Prop({ required: false, type: mongoose.Schema.Types.ObjectId, ref: 'type' }),
     __metadata("design:type", type_schema_1.Type)
 ], Pokemon.prototype, "firstType", void 0);
 __decorate([
-    mongoose_1.Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'type' }),
+    mongoose_1.Prop({ required: false, type: mongoose.Schema.Types.ObjectId, ref: 'type' }),
     __metadata("design:type", type_schema_1.Type)
 ], Pokemon.prototype, "secondType", void 0);
 __decorate([
-    mongoose_1.Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'trainer' }),
+    mongoose_1.Prop({ required: false, type: mongoose.Schema.Types.ObjectId, ref: 'trainer' }),
     __metadata("design:type", trainer_schema_1.Trainer)
 ], Pokemon.prototype, "trainer", void 0);
 Pokemon = __decorate([

@@ -15,8 +15,7 @@ export class TrainersService {
     async create(name: string, username: string, password: string): Promise<Trainer> {
         const testTrainer = await this.trainerModel.findOne({ username: username })
         if (testTrainer) throw new ForbiddenException("Trainer already exist");
-        const createdTrainer = new this.trainerModel({ name: name, username: username, password: password });
-        return createdTrainer.save();
+        return this.trainerModel.create({ name: name, username: username, password: password, boxes: [] });
     }
 
     async findAll(): Promise<Trainer[]> {
@@ -30,7 +29,7 @@ export class TrainersService {
     async addBox(id: string, name: string): Promise<Trainer> {
         let trainer: Trainer;
         try {
-            trainer = await this.trainerModel.findById(id).exec();
+            trainer = await this.trainerModel.findById(id);
             if (!trainer) {
                 throw new NotFoundException('Could not find trainer.');
             } else {
@@ -68,7 +67,7 @@ export class TrainersService {
         if (types.length == 0) throw new NotFoundException('Type not found.');
 
         // Verification if trainer exist
-        const trainer = await this.findById(trainerId)
+        const trainer = await this.trainerModel.findById(trainerId).populate("boxes");
         if (trainer == null) throw new NotFoundException('Trainer not found.');
 
         // Verification if box exist

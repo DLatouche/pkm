@@ -31,8 +31,7 @@ let TrainersService = class TrainersService {
         const testTrainer = await this.trainerModel.findOne({ username: username });
         if (testTrainer)
             throw new common_1.ForbiddenException("Trainer already exist");
-        const createdTrainer = new this.trainerModel({ name: name, username: username, password: password });
-        return createdTrainer.save();
+        return this.trainerModel.create({ name: name, username: username, password: password, boxes: [] });
     }
     async findAll() {
         return await this.trainerModel.find().populate("boxes");

@@ -10,16 +10,15 @@ export class BoxesService {
     constructor(@InjectConnection() private connection: Connection, @InjectModel("box") private readonly boxModel: Model<Box>, private pokemonsService: PokemonsService) { }
 
     async create(name: string): Promise<Box> {
-        const createdBox = new this.boxModel({ name: name });
-        return createdBox.save();
+        return this.boxModel.create({ name: name });
     }
 
     async findAll(): Promise<Box[]> {
-        return await this.boxModel.find().populate("pokemons");
+        return this.boxModel.find().populate("pokemons");
     }
 
     async getSize(id: string): Promise<number> {
-        return await (await this.boxModel.findById(id)).pokemons.length;
+        return (await this.boxModel.findById(id)).pokemons.length;
     }
 
     async getType(id: string): Promise<string[]> {

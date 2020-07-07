@@ -24,18 +24,17 @@ export class Pokemon extends mongoose.Document {
     @Prop()
     id: string;
 
-    @Prop()
     @Prop({ required: true })
     name: string;
 
-    @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'type' })
-    firstType: Type;
+    @Prop({required: false, type: mongoose.Schema.Types.ObjectId, ref: 'type'})
+    firstType?: Type;
 
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'type' })
-    secondType: Type;
+    @Prop({required: false, type: mongoose.Schema.Types.ObjectId, ref: 'type' })
+    secondType?: Type;
 
-    @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'trainer' })
-    trainer: Trainer;
+    @Prop({required: false, type: mongoose.Schema.Types.ObjectId, ref: 'trainer' })
+    trainer?: Trainer;
 }
 
 export const PokemonSchema = SchemaFactory.createForClass(Pokemon)

@@ -23,8 +23,8 @@ export class Trainer extends mongoose.Document {
     @Prop()
     id: string;
 
-    @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: 'box' }])
-    boxes: Box[];
+    @Prop([{required: false, type: mongoose.Schema.Types.ObjectId, ref: 'box' }])
+    boxes?: Box[];
 
     @Prop({ required: true })
     name: string;

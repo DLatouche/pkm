@@ -24,8 +24,7 @@ let TypesService = class TypesService {
     async create(name) {
         const getType = await this.typeModel.findOne({ name: name });
         if (getType == null) {
-            const createdType = new this.typeModel({ name: name });
-            return createdType.save();
+            return this.typeModel.create({ name: name });
         }
         else {
             throw new common_1.ForbiddenException('Type already exist');

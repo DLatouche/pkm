@@ -10,8 +10,7 @@ export class TypesService {
     async create(name: string): Promise<Type> {
         const getType = await this.typeModel.findOne({ name: name });
         if(getType == null){
-            const createdType = new this.typeModel({ name: name });
-            return createdType.save();
+            return this.typeModel.create({ name: name });
         }else{
             throw new ForbiddenException('Type already exist');
         }

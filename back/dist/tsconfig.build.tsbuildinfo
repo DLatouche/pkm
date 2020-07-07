@@ -1617,7 +1617,7 @@
         "affectsGlobalScope": false
       },
       "../src/schemas/pokemon.schema.ts": {
-        "version": "14c8eb2928a006474590ae1ac0f1546d0a50a2f77223fed2fd2dc1c1e6bf9740",
+        "version": "21c0b75d3af38e9a739f4793e19b3eb45d5368cc032d55ad78b6736227da6b67",
         "signature": "59f90d9878e3973f1adc0d06ce2205d1a03172ce6560faa7e200617954f2b142",
         "affectsGlobalScope": false
       },
@@ -1627,7 +1627,7 @@
         "affectsGlobalScope": false
       },
       "../src/pokemons/pokemons.service.ts": {
-        "version": "60e7cfe80b70185793baada609468bbf1a94b6e5b2e17d138186224d4126374f",
+        "version": "fd3e05a4e7e38752aab6469b9060c5d53130ea7ddb131cf7a707738251636f21",
         "signature": "a2cba336bc6678d69c9a64843fa7e1963db14edd9feaf16874ae162224ac9df2",
         "affectsGlobalScope": false
       },
@@ -1637,12 +1637,12 @@
         "affectsGlobalScope": false
       },
       "../src/types/types.service.ts": {
-        "version": "79aee07d3475347960415d38cad630df5aeb178c16b26c2b20dccb0a6eae7232",
+        "version": "0dbb86653faba939a675f51db0dbc6b44a762ce88a5d978ff7f510339205ebac",
         "signature": "b18f1ca8f655f859fec1cbe7eabbc460153a92fae8c56800683710207495da52",
         "affectsGlobalScope": false
       },
       "../src/trainers/trainers.service.ts": {
-        "version": "e3c2cf02edcf84e361961096e3400ab784fc02712a2a9da150c6c5e5f2e3c289",
+        "version": "020ab29d3c534dde6ee439d3be2ce1ac86482a339c8f1152d5b121e93c6d51a0",
         "signature": "982a02bdb22e72ddd0258a0fe4e43752a117ea7b939664a9c63277e85fb48084",
         "affectsGlobalScope": false
       },

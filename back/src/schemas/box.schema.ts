@@ -23,8 +23,8 @@ export class Box extends mongoose.Document {
     @Prop({required: true})
     name: string;
 
-    @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: 'pokemon' }])
-    pokemons: Pokemon[];
+    @Prop([{ required: false, type: mongoose.Schema.Types.ObjectId, ref: 'pokemon' }])
+    pokemons?: Pokemon[];
 }
 
 export const BoxSchema = SchemaFactory.createForClass(Box)
