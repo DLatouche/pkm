@@ -23,7 +23,6 @@ export class BoxesController {
     @ApiOperation({ summary: 'Delete one pokemon on one box.' })
     @ApiResponse({ status: 200, description: 'Object with number of row who is concerned.' })
     async deletePokemon(@Param('id') id: string, @Param('pokemonId') pokemonId: string): Promise<Object> {
-        console.log('boxes.controller.ts -> 24: pokemonId', pokemonId)
         return await this.boxesService.deletePokemon(id, pokemonId);
     }
 
