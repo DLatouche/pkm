@@ -42,7 +42,7 @@ let TrainersService = class TrainersService {
     async addBox(id, name) {
         let trainer;
         try {
-            trainer = await this.trainerModel.findById(id).exec();
+            trainer = await this.trainerModel.findById(id);
             if (!trainer) {
                 throw new common_1.NotFoundException('Could not find trainer.');
             }
@@ -78,7 +78,7 @@ let TrainersService = class TrainersService {
         const types = await Promise.all(promisesType);
         if (types.length == 0)
             throw new common_1.NotFoundException('Type not found.');
-        const trainer = await this.findById(trainerId);
+        const trainer = await this.trainerModel.findById(trainerId).populate("boxes");
         if (trainer == null)
             throw new common_1.NotFoundException('Trainer not found.');
         let box = await this.findOneBox(trainerId, boxId);

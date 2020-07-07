@@ -22,7 +22,7 @@ let PokemonsService = class PokemonsService {
         this.pokemonModel = pokemonModel;
     }
     async create(name, types, trainer) {
-        const createdPokemon = this.pokemonModel.create({ name: name });
+        const createdPokemon = await this.pokemonModel.create({ name });
         createdPokemon.firstType = types[0];
         if (types.length > 1)
             createdPokemon.secondType = types[1];

@@ -3,6 +3,6 @@ import { Pokemon } from './pokemon.schema';
 export declare class Box extends mongoose.Document {
     id: string;
     name: string;
-    pokemons: Pokemon[];
+    pokemons?: Pokemon[];
 }
 export declare const BoxSchema: mongoose.Schema<any>;

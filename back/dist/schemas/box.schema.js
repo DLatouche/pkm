@@ -23,7 +23,7 @@ __decorate([
     __metadata("design:type", String)
 ], Box.prototype, "name", void 0);
 __decorate([
-    mongoose_1.Prop([{ type: mongoose.Schema.Types.ObjectId, ref: 'pokemon' }]),
+    mongoose_1.Prop([{ required: false, type: mongoose.Schema.Types.ObjectId, ref: 'pokemon' }]),
     __metadata("design:type", Array)
 ], Box.prototype, "pokemons", void 0);
 Box = __decorate([

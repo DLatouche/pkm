@@ -19,7 +19,7 @@ __decorate([
     __metadata("design:type", String)
 ], Trainer.prototype, "id", void 0);
 __decorate([
-    mongoose_1.Prop([{ type: mongoose.Schema.Types.ObjectId, ref: 'box' }]),
+    mongoose_1.Prop([{ required: false, type: mongoose.Schema.Types.ObjectId, ref: 'box' }]),
     __metadata("design:type", Array)
 ], Trainer.prototype, "boxes", void 0);
 __decorate([

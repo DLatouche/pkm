@@ -24,14 +24,13 @@ let BoxesService = class BoxesService {
         this.pokemonsService = pokemonsService;
     }
     async create(name) {
-        const createdBox = new this.boxModel({ name: name });
-        return createdBox.save();
+        return this.boxModel.create({ name: name });
     }
     async findAll() {
-        return await this.boxModel.find().populate("pokemons");
+        return this.boxModel.find().populate("pokemons");
     }
     async getSize(id) {
-        return await (await this.boxModel.findById(id)).pokemons.length;
+        return (await this.boxModel.findById(id)).pokemons.length;
     }
     async getType(id) {
         let types = [];
