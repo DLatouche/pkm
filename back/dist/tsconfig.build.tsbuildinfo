@@ -1812,23 +1812,23 @@
         "affectsGlobalScope": false
       },
       "../src/pokemons/pokemons.service.ts": {
-        "version": "d96de3809ba9eb8ee26c8c2f9128e5e34f91cc56dd8c9ef2bf8dc6cd00dafea4",
-        "signature": "7d0e78d93f01acfb12cf81cfb882110072adf0278a71472e4b4c905cc078c4f0",
+        "version": "60e7cfe80b70185793baada609468bbf1a94b6e5b2e17d138186224d4126374f",
+        "signature": "a2cba336bc6678d69c9a64843fa7e1963db14edd9feaf16874ae162224ac9df2",
         "affectsGlobalScope": false
       },
       "../src/boxes/boxes.service.ts": {
-        "version": "198bee5eb509b0384d5db56b8e4cf9dfdd22a714f1f53bf5e53e3e0b0f815934",
-        "signature": "5b8a5943dfe877aa51741f414ae1f1b821b7e2c8768134cecdfd190048e87786",
+        "version": "bef423bb89c02d4c0c310da2f00a562893befcb5c45a86383233220ee24ff9ca",
+        "signature": "80ec2e22ad30828e0fc8037946c0b86c216f37514fbaea4ffeff7d510bd8cb0a",
         "affectsGlobalScope": false
       },
       "../src/types/types.service.ts": {
-        "version": "15fcc6f4c2884dcfee024030bd758699d7995a31812ae7d7911ebf8ff904970a",
-        "signature": "8d892626651136d767f8f411b10bc4e8256a0ab1b7e57ab38d4d2c0dd980b7be",
+        "version": "5f7054e9cebc8d4ef297b1c172381cfd9e92bdd6a670ae9e03ddd24b0fe1ef40",
+        "signature": "b18f1ca8f655f859fec1cbe7eabbc460153a92fae8c56800683710207495da52",
         "affectsGlobalScope": false
       },
       "../src/trainers/trainers.service.ts": {
-        "version": "bb7859fdea1ba5e7b00d84d8d7beb1016ccbb30cbef0d1f407af51c6c3d3222a",
-        "signature": "8e41cc450e9aa5cc042316ceed00cb6cf28c6691fdce66498a98c3e0c755631e",
+        "version": "e3c2cf02edcf84e361961096e3400ab784fc02712a2a9da150c6c5e5f2e3c289",
+        "signature": "982a02bdb22e72ddd0258a0fe4e43752a117ea7b939664a9c63277e85fb48084",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/jsonwebtoken/index.d.ts": {
@@ -1867,8 +1867,8 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.service.ts": {
-        "version": "b0425559fcb14b644105d3f77b2de6e77b9176cdbf1a210b778ce3d1707d0467",
-        "signature": "dde4c43e1d459ecc21d86803409c3e933f0699281de6f9a043301479cdcdae4f",
+        "version": "4c6d3bd7d91987f88759d9818951bbd031111efbb11b29c297b1763d1ebe7b77",
+        "signature": "e7c5b40e662523d9755bf15e22425cf9845579e0209df646b650784c6dabbb7c",
         "affectsGlobalScope": false
       },
       "../src/auth/jwt-auth.guard.ts": {
@@ -1887,42 +1887,42 @@
         "affectsGlobalScope": false
       },
       "../src/trainers/trainers.controller.ts": {
-        "version": "a52f4a01ad8dbd27ba3eb0245f2ac93bf1095ba538eb35873e5e26f5f9d8f5a5",
-        "signature": "b7b5b5b82bb2fe3809b1740e6ca6217817c1695f36281ba5ac6244a4246040e5",
+        "version": "c826e09dd84ca06a57d3d45f139d2760387637a52df92b7f26494a00c07bca35",
+        "signature": "83339da8b78bf0f018430ce24e86feff8099fccee7fc56be13af2e7dc375b065",
         "affectsGlobalScope": false
       },
       "../src/boxes/boxes.controller.ts": {
-        "version": "cfdc69bf1a93d09cc79b6367d87d102db40a7115becf7aa598af63d21eb867dd",
-        "signature": "19559fcf8ccc2855d040e2633d4e8d8b8b53477da21dc1d48bcc8146ecdff2f9",
+        "version": "e1b569057366ea39348296596b1dc12c0d9b4e057e15caaab71500e9db1791e6",
+        "signature": "792e84299fa2602f639b7d421b6a50d3b24360de79446273decffe74b56c32c6",
         "affectsGlobalScope": false
       },
       "../src/pokemons/pokemons.controller.ts": {
-        "version": "eab2b3d66a1d90896cded5881c5e4fa94bba73f619bcd3e616563478bbe1c938",
-        "signature": "c2281d7f9e9afef89b43f885b3b60238c25febc106785a6c8108ddff2b95ed7f",
+        "version": "c8d75698e340d8697e1a18211898807e60962357a8415163b16e8ce5f68594c3",
+        "signature": "a5b5fa5e0299a379228eaae69032905c6ef0f7e76aa8b843c0f2099581266240",
         "affectsGlobalScope": false
       },
       "../src/pokemons/pokemons.module.ts": {
-        "version": "bd463ab975cd9302fc79cd24cae237bf87ecfe8908e6629183e54fc773ffc0ff",
+        "version": "bd3370e624fea2295f4428c6128aa1e9d3376cff9a642c8acc29d46bad0f6214",
         "signature": "23fb43d9b48c1d98bf0847bdc06d96072daf13ee45c3c45508e6c6c7b0135a5b",
         "affectsGlobalScope": false
       },
       "../src/boxes/boxes.module.ts": {
-        "version": "c1d46b7d51f44f88c6578158ca15f263a8042bf0bb2609e3eaa2686fc5dba0b6",
+        "version": "30b990eb879607604896218a36b81bbf66bd33b17d747c824f7873bce46e435e",
         "signature": "43357e1cad4b76cad33d56400530bed014b4df3594a8e7be6ce6a5d0f9f1f1ff",
         "affectsGlobalScope": false
       },
       "../src/types/types.controller.ts": {
-        "version": "5ecff7de0c2416cb69646b4eb1578af9965121139803081cc4f09c37893f45a7",
-        "signature": "d474a2945201122655b191965976c84408584557d96f28913a56408a16ffa4b5",
+        "version": "8941ad72beb866d0aca93b3c503ce76a79baeeed20ea744dd893e9b6b0c3895a",
+        "signature": "00672f52fca4e46f40e2568773c3fce9bd791d65119f7ece75ae47e4165f1ae1",
         "affectsGlobalScope": false
       },
       "../src/types/types.module.ts": {
-        "version": "d3656175f4be76e3263f053781b1bb1480dd55003d395934455cac9522c07b5c",
+        "version": "0a93587f1c795658aa937c7bca291a40b2adf5d447aa79f21c6e61f69c4540b4",
         "signature": "82b3b1a20c7d7eae18cba832c9240914b6d21e70512f08b29c643200d38fb2d9",
         "affectsGlobalScope": false
       },
       "../src/trainers/trainers.module.ts": {
-        "version": "6a18d7717cfb127e5cf4c143c51cf9dbee8a8db2cdb60e0c1c5baed2e9f2c3f1",
+        "version": "92f51945394183edf98b7559e9641d6a0da5892f59bcfbbc2bb588132605d063",
         "signature": "bb0ba2378251c73027f3e3074dbcf40bd4e1570e5b43911aeb17e0fe752d8bba",
         "affectsGlobalScope": false
       },
@@ -1957,7 +1957,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.module.ts": {
-        "version": "180ea1ed20f4cf959ae96d9b54320535718759c805e062cc50b903f2b42f4b43",
+        "version": "5299f0c48aebd4f9dd737da6544219a1d2fa873fd516e7f30937143e5e78ee54",
         "signature": "2e5d258cf85349b02b015c3f1b8873c152d182c3819a7ccc3aff16fc3037a5fc",
         "affectsGlobalScope": false
       },
@@ -6449,8 +6449,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../src/auth/jwt-auth.guard.ts",
         "../src/boxes/boxes.service.ts",
-        "../src/schemas/box.schema.ts",
-        "../src/schemas/pokemon.schema.ts"
+        "../src/schemas/box.schema.ts"
       ],
       "../src/boxes/boxes.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -6588,7 +6587,6 @@
         "../src/schemas/pokemon.schema.ts",
         "../src/schemas/trainer.schema.ts",
         "../src/trainers/dto/createtrainer.dto.ts",
-        "../src/trainers/trainers.module.ts",
         "../src/trainers/trainers.service.ts"
       ],
       "../src/trainers/trainers.module.ts": [
@@ -6604,8 +6602,7 @@
         "../src/schemas/trainer.schema.ts",
         "../src/trainers/trainers.controller.ts",
         "../src/trainers/trainers.service.ts",
-        "../src/types/types.module.ts",
-        "../src/types/types.service.ts"
+        "../src/types/types.module.ts"
       ],
       "../src/trainers/trainers.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",

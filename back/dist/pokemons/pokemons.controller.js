@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PokemonsController = void 0;
 const common_1 = require("@nestjs/common");
-const pokemon_schema_1 = require("../schemas/pokemon.schema");
 const pokemons_service_1 = require("./pokemons.service");
 const swagger_1 = require("@nestjs/swagger");
 let PokemonsController = class PokemonsController {

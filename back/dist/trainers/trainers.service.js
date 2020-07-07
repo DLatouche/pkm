@@ -17,11 +17,8 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("mongoose");
 const mongoose_2 = require("@nestjs/mongoose");
 const boxes_service_1 = require("../boxes/boxes.service");
-const trainer_schema_1 = require("../schemas/trainer.schema");
-const box_schema_1 = require("../schemas/box.schema");
 const pokemons_service_1 = require("../pokemons/pokemons.service");
 const types_service_1 = require("../types/types.service");
-const pokemon_schema_1 = require("../schemas/pokemon.schema");
 let TrainersService = class TrainersService {
     constructor(connection, trainerModel, boxesService, pokemonsService, typesService) {
         this.connection = connection;

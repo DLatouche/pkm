@@ -16,9 +16,6 @@ exports.PokemonsService = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("mongoose");
 const mongoose_2 = require("@nestjs/mongoose");
-const pokemon_schema_1 = require("../schemas/pokemon.schema");
-const trainer_schema_1 = require("../schemas/trainer.schema");
-const type_schema_1 = require("../schemas/type.schema");
 let PokemonsService = class PokemonsService {
     constructor(connection, pokemonModel) {
         this.connection = connection;

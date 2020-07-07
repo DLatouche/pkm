@@ -15,9 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BoxesController = void 0;
 const common_1 = require("@nestjs/common");
 const boxes_service_1 = require("./boxes.service");
-const box_schema_1 = require("../schemas/box.schema");
 const swagger_1 = require("@nestjs/swagger");
-const pokemon_schema_1 = require("../schemas/pokemon.schema");
 const jwt_auth_guard_1 = require("../auth/jwt-auth.guard");
 let BoxesController = class BoxesController {
     constructor(boxesService) {

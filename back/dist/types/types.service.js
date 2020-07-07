@@ -14,7 +14,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TypesService = void 0;
 const common_1 = require("@nestjs/common");
-const type_schema_1 = require("../schemas/type.schema");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 let TypesService = class TypesService {

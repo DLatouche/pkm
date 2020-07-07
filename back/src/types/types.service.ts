@@ -1,5 +1,5 @@
 import { Injectable, ForbiddenException } from '@nestjs/common';
-import { TypeSchema, Type } from 'src/schemas/type.schema';
+import { TypeSchema, Type } from '../schemas/type.schema';
 import { InjectConnection, InjectModel } from '@nestjs/mongoose';
 import { Connection, Model } from 'mongoose';
 
@@ -24,5 +24,4 @@ export class TypesService {
     async findById(id: string): Promise<Type>{
         return await this.typeModel.findById(id);
     }
-
 }

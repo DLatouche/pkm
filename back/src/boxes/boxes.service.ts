@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { Connection, Model } from 'mongoose';
-import { Box } from 'src/schemas/box.schema';
-import { Type } from 'src/schemas/type.schema';
+import { Box } from '../schemas/box.schema';
+import { Type } from '../schemas/type.schema';
 import { InjectModel, InjectConnection } from '@nestjs/mongoose';
-import { PokemonsService } from 'src/pokemons/pokemons.service';
+import { PokemonsService } from '../pokemons/pokemons.service';
 
 @Injectable()
 export class BoxesService {

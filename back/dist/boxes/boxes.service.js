@@ -15,8 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BoxesService = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("mongoose");
-const box_schema_1 = require("../schemas/box.schema");
-const type_schema_1 = require("../schemas/type.schema");
 const mongoose_2 = require("@nestjs/mongoose");
 const pokemons_service_1 = require("../pokemons/pokemons.service");
 let BoxesService = class BoxesService {

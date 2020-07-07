@@ -1,4 +1,4 @@
-import { TrainersService } from 'src/trainers/trainers.service';
+import { TrainersService } from '../trainers/trainers.service';
 import { JwtService } from '@nestjs/jwt';
 export declare class AuthService {
     private trainersService;

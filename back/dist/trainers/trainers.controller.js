@@ -16,12 +16,10 @@ exports.TrainersController = void 0;
 const common_1 = require("@nestjs/common");
 const trainers_service_1 = require("./trainers.service");
 const swagger_1 = require("@nestjs/swagger");
-const trainer_schema_1 = require("../schemas/trainer.schema");
-const box_schema_1 = require("../schemas/box.schema");
-const pokemon_schema_1 = require("../schemas/pokemon.schema");
-const boxes_service_1 = require("../boxes/boxes.service");
-const pokemons_service_1 = require("../pokemons/pokemons.service");
-const jwt_auth_guard_1 = require("../auth/jwt-auth.guard");
+const trainer_schema_1 = require("..//schemas/trainer.schema");
+const boxes_service_1 = require("..//boxes/boxes.service");
+const pokemons_service_1 = require("..//pokemons/pokemons.service");
+const jwt_auth_guard_1 = require("..//auth/jwt-auth.guard");
 const createTrainer_dto_1 = require("./dto/createTrainer.dto");
 let TrainersController = class TrainersController {
     constructor(trainersService, boxesService, pokemonsService) {

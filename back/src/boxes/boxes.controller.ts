@@ -1,9 +1,8 @@
 import { Controller, Get, Delete, Param, UseGuards } from '@nestjs/common';
 import { BoxesService } from './boxes.service';
-import { Box } from 'src/schemas/box.schema';
+import { Box } from '../schemas/box.schema';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiBasicAuth, ApiBearerAuth } from '@nestjs/swagger';
-import { Pokemon } from 'src/schemas/pokemon.schema';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @ApiTags('boxes')
 @Controller('boxes')

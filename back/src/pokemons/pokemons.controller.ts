@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { Pokemon } from 'src/schemas/pokemon.schema';
+import { Pokemon } from '../schemas/pokemon.schema';
 import { PokemonsService } from './pokemons.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 

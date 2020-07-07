@@ -12,7 +12,4 @@ describe('Pokemons Controller', () => {
     controller = module.get<PokemonsController>(PokemonsController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
 });

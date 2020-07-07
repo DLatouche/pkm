@@ -1,9 +1,9 @@
 import { TrainersService } from './trainers.service';
-import { Trainer } from 'src/schemas/trainer.schema';
-import { Box } from 'src/schemas/box.schema';
-import { Pokemon } from 'src/schemas/pokemon.schema';
-import { BoxesService } from 'src/boxes/boxes.service';
-import { PokemonsService } from 'src/pokemons/pokemons.service';
+import { Trainer } from '..//schemas/trainer.schema';
+import { Box } from '..//schemas/box.schema';
+import { Pokemon } from '..//schemas/pokemon.schema';
+import { BoxesService } from '..//boxes/boxes.service';
+import { PokemonsService } from '..//pokemons/pokemons.service';
 import { CreateTrainerDto } from './dto/createTrainer.dto';
 export declare class TrainersController {
     private trainersService;

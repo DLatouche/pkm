@@ -1,6 +1,6 @@
 import { Connection, Model } from 'mongoose';
-import { Box } from 'src/schemas/box.schema';
-import { PokemonsService } from 'src/pokemons/pokemons.service';
+import { Box } from '../schemas/box.schema';
+import { PokemonsService } from '../pokemons/pokemons.service';
 export declare class BoxesService {
     private connection;
     private readonly boxModel;

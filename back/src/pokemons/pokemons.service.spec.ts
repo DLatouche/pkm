@@ -12,7 +12,4 @@ describe('PokemonsService', () => {
     service = module.get<PokemonsService>(PokemonsService);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
-  });
 });

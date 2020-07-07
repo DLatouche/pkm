@@ -1,12 +1,12 @@
 import { Injectable, NotFoundException, ForbiddenException } from '@nestjs/common';
 import { Connection, Model } from 'mongoose';
 import { InjectConnection, InjectModel } from '@nestjs/mongoose';
-import { BoxesService } from 'src/boxes/boxes.service';
-import { Trainer } from 'src/schemas/trainer.schema';
-import { Box } from 'src/schemas/box.schema';
-import { PokemonsService } from 'src/pokemons/pokemons.service';
-import { TypesService } from 'src/types/types.service';
-import { Pokemon } from 'src/schemas/pokemon.schema';
+import { BoxesService } from '../boxes/boxes.service';
+import { Trainer } from '../schemas/trainer.schema';
+import { Box } from '../schemas/box.schema';
+import { PokemonsService } from '../pokemons/pokemons.service';
+import { TypesService } from '../types/types.service';
+import { Pokemon } from '../schemas/pokemon.schema';
 
 @Injectable()
 export class TrainersService {

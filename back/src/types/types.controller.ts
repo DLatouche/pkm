@@ -1,7 +1,7 @@
 import { Controller, Post, Get, Body } from '@nestjs/common';
 import { TypesService } from './types.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Type } from 'src/schemas/type.schema';
+import { Type } from '../schemas/type.schema';
 
 @ApiTags('types')
 @Controller('types')

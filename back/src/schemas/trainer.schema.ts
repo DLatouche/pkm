@@ -1,8 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
 import { Box } from './box.schema';
-import { ApiProperty } from '@nestjs/swagger';
-import { type } from 'os';
 
 // export const TrainerSchema = new mongoose.Schema({
 //   name: { type: String, required: true },
@@ -21,20 +19,20 @@ import { type } from 'os';
 
 
 @Schema()
-export class Trainer extends mongoose.Document{
+export class Trainer extends mongoose.Document {
     @Prop()
     id: string;
 
-    @Prop( [{ type: mongoose.Schema.Types.ObjectId, ref: 'box' }])
+    @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: 'box' }])
     boxes: Box[];
 
-    @Prop({required: true})
+    @Prop({ required: true })
     name: string;
 
-    @Prop({required: true})
+    @Prop({ required: true })
     username: string;
 
-    @Prop({required: true})
+    @Prop({ required: true })
     password: string;
 }
 

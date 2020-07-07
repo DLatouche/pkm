@@ -1,13 +1,12 @@
 import { Controller, Post, Get, Body, Param, NotFoundException, Delete, ForbiddenException, Patch, UseGuards } from '@nestjs/common';
 import { TrainersService } from './trainers.service';
 import { ApiOperation, ApiResponse, ApiTags, ApiBearerAuth, ApiProperty, ApiBody } from '@nestjs/swagger';
-import { Trainer, TrainerSchema } from 'src/schemas/trainer.schema';
-import { Box } from 'src/schemas/box.schema';
-import { Pokemon } from 'src/schemas/pokemon.schema';
-import { BoxesService } from 'src/boxes/boxes.service';
-import { PokemonsService } from 'src/pokemons/pokemons.service';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { TrainersModule } from './trainers.module';
+import { Trainer, TrainerSchema } from '..//schemas/trainer.schema';
+import { Box } from '..//schemas/box.schema';
+import { Pokemon } from '..//schemas/pokemon.schema';
+import { BoxesService } from '..//boxes/boxes.service';
+import { PokemonsService } from '..//pokemons/pokemons.service';
+import { JwtAuthGuard } from '..//auth/jwt-auth.guard';
 import { CreateTrainerDto } from './dto/createTrainer.dto';
 
 @ApiTags('trainers')

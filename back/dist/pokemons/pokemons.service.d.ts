@@ -1,7 +1,7 @@
 import { Connection, Model } from 'mongoose';
-import { Pokemon } from 'src/schemas/pokemon.schema';
-import { Trainer } from 'src/schemas/trainer.schema';
-import { Type } from 'src/schemas/type.schema';
+import { Pokemon } from '../schemas/pokemon.schema';
+import { Trainer } from '../schemas/trainer.schema';
+import { Type } from '../schemas/type.schema';
 export declare class PokemonsService {
     private connection;
     private readonly pokemonModel;

@@ -1,4 +1,4 @@
-import { Type } from 'src/schemas/type.schema';
+import { Type } from '../schemas/type.schema';
 import { Connection, Model } from 'mongoose';
 export declare class TypesService {
     private connection;

@@ -16,7 +16,6 @@ exports.TypesController = void 0;
 const common_1 = require("@nestjs/common");
 const types_service_1 = require("./types.service");
 const swagger_1 = require("@nestjs/swagger");
-const type_schema_1 = require("../schemas/type.schema");
 let TypesController = class TypesController {
     constructor(typesService) {
         this.typesService = typesService;

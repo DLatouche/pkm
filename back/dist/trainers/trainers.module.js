@@ -14,7 +14,6 @@ const trainer_schema_1 = require("../schemas/trainer.schema");
 const mongoose_1 = require("@nestjs/mongoose");
 const boxes_module_1 = require("../boxes/boxes.module");
 const pokemons_module_1 = require("../pokemons/pokemons.module");
-const types_service_1 = require("../types/types.service");
 const types_module_1 = require("../types/types.module");
 let TrainersModule = class TrainersModule {
 };
