@@ -25,7 +25,6 @@ let BoxesController = class BoxesController {
         return await this.boxesService.findAll();
     }
     async deletePokemon(id, pokemonId) {
-        console.log('boxes.controller.ts -> 24: pokemonId', pokemonId);
         return await this.boxesService.deletePokemon(id, pokemonId);
     }
 };

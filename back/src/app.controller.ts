@@ -8,7 +8,7 @@ import { ApiOperation, ApiResponse, ApiTags, ApiBody, ApiProperty } from '@nestj
 @ApiTags('Home')
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService, private readonly authService: AuthService) { }
+  constructor(private readonly authService: AuthService) { }
 
   @UseGuards(LocalAuthGuard)
   @Post('auth/login')

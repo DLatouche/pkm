@@ -14,13 +14,11 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
-const app_service_1 = require("./app.service");
 const local_auth_guard_1 = require("./auth/local-auth.guard");
 const auth_service_1 = require("./auth/auth.service");
 const swagger_1 = require("@nestjs/swagger");
 let AppController = class AppController {
-    constructor(appService, authService) {
-        this.appService = appService;
+    constructor(authService) {
         this.authService = authService;
     }
     async login(req) {
@@ -40,7 +38,7 @@ __decorate([
 AppController = __decorate([
     swagger_1.ApiTags('Home'),
     common_1.Controller(),
-    __metadata("design:paramtypes", [app_service_1.AppService, auth_service_1.AuthService])
+    __metadata("design:paramtypes", [auth_service_1.AuthService])
 ], AppController);
 exports.AppController = AppController;
 //# sourceMappingURL=app.controller.js.map

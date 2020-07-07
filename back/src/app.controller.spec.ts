@@ -1,18 +1,22 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AuthService } from './auth/auth.service';
 
-describe('AppController', () => {
+describe('App Controller', () => {
   let appController: AppController;
+  let authService: AuthService;
+
 
   beforeEach(async () => {
-    const app: TestingModule = await Test.createTestingModule({
-      controllers: [AppController],
-      providers: [AppService],
-    }).compile();
-
-    appController = app.get<AppController>(AppController);
+    authService = { login: jest.fn() } as any;
+    appController = new AppController(authService);
   });
 
- 
+  describe('login', () => {
+    it('should return an user', async () => {
+      let result = "access_token";
+      (authService.login as any).mockResolvedValue(result);
+      expect(await appController.login({ username: "login", password: "password" })).toBe(result);
+    });
+  });
 });
