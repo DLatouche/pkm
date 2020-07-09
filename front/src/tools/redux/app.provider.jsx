@@ -6,8 +6,8 @@ const { AppContext } = require("./app.context");
 const initialState = {user:{id: null}};
 
 function AppProvider(props) {
-    const [state, dispatch] = useReducer(appReducer, initialState)
-    const data = { state, dispatch }
+    const [store, dispatch] = useReducer(appReducer, initialState)
+    const data = { store, dispatch }
 
     return <AppContext.Provider value={data} {...props} />
 }

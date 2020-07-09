@@ -1,7 +1,7 @@
 const { userReducer } = require("./user/user.reducer");
 
-const appReducer = (state, action) => ({
-    user: userReducer(state.user, action)
+const appReducer = (store, action) => ({
+    user: userReducer(store.user, action)
 })
 
 export { appReducer };

@@ -7,8 +7,7 @@ export function userReducer(state, action) {
         case LOGIN:
             return { id: action.userId, username: action.username, accessToken: action.accessToken }
         case LOGOUT: return { id: null, accessToken: null }
-        case SIGNIN: return { id: 1, username: "Jean", password: "Oui" }
-
+        case SIGNIN: return { ...state, username: action.username, password: action.password }
         default:
             return state
     }

@@ -10,9 +10,14 @@ import Loader from '../../utility/loader/Loader';
 import Toast from '../../utility/toast/Toast';
 
 export default function LogIn() {
-    const [state, setState] = useState({ username: "zwerque2", password: "mdp", errorUsername: "", errorPassword: "", showLoader: false, openToast: false });
-    const { dispatch } = useAppContext();
+    const {store,  dispatch } = useAppContext();
+    let {user} = store
+    if(!user?.username){
+        user.username = ""
+        user.password = ""
+    }
     const history = useHistory();
+    const [state, setState] = useState({ username: user?.username, password: user?.password, errorUsername: "", errorPassword: "", showLoader: false, openToast: false });
     const onInputChange = (e) => {
         const { name, value } = e.target
         setState(prev => ({ ...prev, [name]: value }))
@@ -27,7 +32,6 @@ export default function LogIn() {
         if (username.length > 0 && password.length > 0) {
             try {
                 let result = await request('auth/login', "POST", { username, password })
-                console.log("Login.jsx -> 27: data", result)
                 dispatch(logIn({username, password, accessToken: result.data.access_token, userId: result.data.userId}))
                 history.push('trainer')
             } catch (e) {
@@ -51,10 +55,10 @@ export default function LogIn() {
             <Paper elevation={3}>
                 <h2>Connexion</h2>
                 <div className="input">
-                    <TextField name="username" label="Identifiant" onChange={onInputChange} error={state.errorUsername.length > 0} helperText={state.errorUsername} />
+                    <TextField name="username" label="Identifiant" onChange={onInputChange} error={state.errorUsername.length > 0} helperText={state.errorUsername} defaultValue={user?.username}/>
                 </div>
                 <div className="input">
-                    <TextField name="password" type="password" label="Mot de passe" onChange={onInputChange} error={state.errorPassword.length > 0} helperText={state.errorPassword} />
+                    <TextField name="password" type="password" label="Mot de passe" onChange={onInputChange} error={state.errorPassword.length > 0} helperText={state.errorPassword} defaultValue={user.password} />
                 </div>
                 <div className="link">
                     <Link to="/signin">S'inscrire</Link>

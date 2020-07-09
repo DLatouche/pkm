@@ -4,9 +4,9 @@ import { Redirect, Route } from 'react-router-dom'
 
 export default function PrivateRoute({ component: Component, ...rest }) {
 
-    const { state } = useAppContext()
+    const { store } = useAppContext()
 
-    const { user } = state;
+    const { user } = store;
     let isLoggedIn = false
     if (user?.accessToken?.length > 0) isLoggedIn = true
     return (

@@ -5,9 +5,8 @@ import { useAppContext } from '../../tools/redux/app.provider'
 
 
 export default function User() {
-    const { state } = useAppContext({ user: { username: "" } })
-    const { user } = state
-    console.log("User.jsx -> 10: state", state)
+    const { store } = useAppContext({ user: { username: "" } })
+    const { user } = store
     return (
         <div>
             <p>{user.username}</p>
