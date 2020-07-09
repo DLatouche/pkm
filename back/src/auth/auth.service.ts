@@ -19,9 +19,11 @@ export class AuthService {
 
     async login(user: any) {
         const payload = { username: user.username, sub: user._id };
+        let dataUser = await this.trainersService.findById(user._id)
         return {
             access_token: this.jwtService.sign(payload),
-            userId: user._id
+            userId: user._id,
+            name: dataUser.name
         }
     }
 

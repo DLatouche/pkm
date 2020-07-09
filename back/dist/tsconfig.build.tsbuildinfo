@@ -1682,8 +1682,8 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.service.ts": {
-        "version": "220d13e5bfc016ea9cb891c48583e7e70decca0b8e58ca69bf9b6206c72e74c2",
-        "signature": "59e0c123445ce6eaa7b2553bceb7ae80b06ce1224493ca87d82e22e78d86db4c",
+        "version": "43e1a45793f560661b10cfd7115373e76e84ae84c40138409400619195cc77db",
+        "signature": "64d7611da9744d51b445db6d4d8b0ca9ac00ce2107966adab07dbdd84a603ef7",
         "affectsGlobalScope": false
       },
       "../src/auth/jwt-auth.guard.ts": {
@@ -1878,7 +1878,7 @@
       },
       "../src/app.controller.ts": {
         "version": "6f07b986c1c927f7b120bf0dbe1a048446f85c8fb0cfe40f5a77d72eb8bb0051",
-        "signature": "2d7fccfdc4d811f84f0d0527975dbb2cac409802224c64f4b72ca3ee9ca643e6",
+        "signature": "58b86e620114be68fa7ddb16afb77abd805b5fea857c03245f5542e798713173",
         "affectsGlobalScope": false
       },
       "../src/trainers/dto/createtrainer.dto.ts": {

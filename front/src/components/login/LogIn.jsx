@@ -32,7 +32,7 @@ export default function LogIn() {
         if (username.length > 0 && password.length > 0) {
             try {
                 let result = await request('auth/login', "POST", { username, password })
-                dispatch(logIn({username, password, accessToken: result.data.access_token, userId: result.data.userId}))
+                dispatch(logIn({username, password, accessToken: result.data.access_token, userId: result.data.userId, name: result.data.name}))
                 history.push('trainer')
             } catch (e) {
                 console.log("%cLogin.jsx -> 34 ERROR: e", 'background: #FF0000; color:#FFFFFF', e)
@@ -61,7 +61,7 @@ export default function LogIn() {
                     <TextField name="password" type="password" label="Mot de passe" onChange={onInputChange} error={state.errorPassword.length > 0} helperText={state.errorPassword} defaultValue={user.password} />
                 </div>
                 <div className="link">
-                    <Link to="/signin">S'inscrire</Link>
+                    <Link to="/signin">Créer un compte</Link>
                 </div>
                 <div className="button">
                     <Button onClick={validate} variant="contained" color="primary">

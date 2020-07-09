@@ -10,6 +10,7 @@ export default function User() {
     return (
         <div>
             <p>{user.username}</p>
+            <p>{user.name}</p>
         </div>
     )
 }

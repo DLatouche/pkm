@@ -11,7 +11,7 @@ import Loader from '../../utility/loader/Loader';
 export default function SignIn() {
     const { dispatch } = useAppContext();
     const history = useHistory();
-    const [state, setState] = useState({ username: "", password: "", errorUsername: "", errorPassword: "", showLoader: false, openToast: false });
+    const [state, setState] = useState({ username: "", password: "", name: "", errorUsername: "", errorPassword: "", errorName: "", showLoader: false, openToast: false });
 
     const onInputChange = (e, v) => {
         const { name, value } = e.target
@@ -20,13 +20,14 @@ export default function SignIn() {
 
     const validate = async () => {
         setState(prev => ({ ...prev, showLoader: true }))
-        const { username, password } = state;
+        const { username, password, name } = state;
         let errorPassword = ""
         let errorUsername = ""
+        let errorName = ""
         let showLoader = true
         if (username.length > 0 && password.length > 0) {
             try {
-                let result = await request('trainers', "POST", { name: "toDo", username, password })
+                let result = await request('trainers', "POST", { name, username, password })
                 dispatch(signIn({ username, password }))
                 history.push('trainer')
             } catch (e) {
@@ -37,7 +38,8 @@ export default function SignIn() {
             showLoader = false;
             if (username.length === 0) errorUsername = "Champ obligatoire"
             if (password.length === 0) errorPassword = "Champ obligatoire"
-            setState(prev => ({ ...prev, errorUsername, errorPassword, showLoader }))
+            if (name.length === 0) errorName = "Champ obligatoire"
+            setState(prev => ({ ...prev, errorUsername, errorPassword, errorName, showLoader }))
         }
     }
 
@@ -51,6 +53,9 @@ export default function SignIn() {
                 <h2>Inscription</h2>
                 <div className="input">
                     <TextField name="username" label="Identifiant" onChange={onInputChange} error={state.errorUsername.length > 0} helperText={state.errorUsername} />
+                </div>
+                <div className="input">
+                    <TextField name="name" label="Nom" onChange={onInputChange} error={state.errorName.length > 0} helperText={state.errorName} />
                 </div>
                 <div className="input">
                     <TextField name="password" label="Mot de passe" type="password" onChange={onInputChange} error={state.errorPassword.length > 0} helperText={state.errorPassword} />
