@@ -1,17 +1,23 @@
 import React from 'react';
 import './App.scss';
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
+import LogIn from './login/LogIn';
+import SignIn from './signin/SignIn'
 import User from './user/User';
-import Todo from './todo/Todo';
+import PrivateRoute from '../utility/privateRoute/PrivateRoute'
 
-function App() {
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <User></User>
-        <Todo></Todo>
-      </header>
-    </div>
+    <Router>
+      <Route exact path="/" component={LogIn}>
+      </Route>
+      <Route path="/signin" component={SignIn}>
+      </Route>
+      <PrivateRoute path="/trainer" component={User} />
+    </Router>
   );
 }
-
-export default App;

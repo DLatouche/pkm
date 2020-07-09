@@ -1,2 +1,4 @@
 # pkm
-Project for full stack course
+Project for full stack course.
+
+Contributor: Dorian Latouche

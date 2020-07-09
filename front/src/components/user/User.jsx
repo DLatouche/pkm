@@ -1,21 +1,16 @@
-import React from 'react';
-import { addUser } from '../../tools/redux/user/user.action';
-import { useAppContext } from '../../tools/redux/app.provider';
+import React from 'react'
+import './User.scss'
+import { useAppContext } from '../../tools/redux/app.provider'
 
-function User() {
-    const { state, dispatch } = useAppContext();
-    const { users } = state;
 
-    console.log("User.jsx -> 7: users", users  )
+
+export default function User() {
+    const { state } = useAppContext({ user: { username: "" } })
+    const { user } = state
+    console.log("User.jsx -> 10: state", state)
     return (
         <div>
-            <div>
-                {users.map((user, i) => (<p key={user.id}>{user.name}</p>))}
-            </div>
-            <button onClick={() => { dispatch(addUser("User name")) }}>Add USER</button>
-
+            <p>{user.username}</p>
         </div>
-    );
+    )
 }
-
-export default User;

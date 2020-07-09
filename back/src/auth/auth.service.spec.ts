@@ -15,7 +15,7 @@ describe('Types Controller', () => {
   });
 
   describe('validateUser', () => {
-    it('should return a pokemon', async () => {
+    it('should validate a user', async () => {
       const result = { id: "id", password: "password" };
       (trainersService.findByUsername as any).mockReturnValue(result);
       expect(await authService.validateUser("username", "password")).toBe(result);
@@ -23,8 +23,8 @@ describe('Types Controller', () => {
   });
 
   describe('login', () => {
-    it('should return an array of pokemon', async () => {
-      const result = {access_token: "lapin"};
+    it('should return an user', async () => {
+      const result = {access_token: "lapin",  userId: undefined};
 
       (jwtService.sign as any).mockReturnValue("lapin");
       expect(await authService.login({username: "lapin", password: "lapin"})).toStrictEqual(result);

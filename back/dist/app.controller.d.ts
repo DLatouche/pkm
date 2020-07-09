@@ -4,5 +4,6 @@ export declare class AppController {
     constructor(authService: AuthService);
     login(req: any): Promise<{
         access_token: string;
+        userId: any;
     }>;
 }

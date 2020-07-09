@@ -1,0 +1,34 @@
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    div{
+      margin: auto;
+      margin-top: 10%;
+      h2{
+        margin: 16px;
+        text-align: center;
+      }
+    }
+  
+    .input{
+      margin: 16px;
+    }
+  
+    .button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 16px;
+    }
+    .link{
+        a{
+            margin: 16px;
+            font-style: italic;
+            color: inherit;
+            &:visited{
+                color: inherit;
+            }
+        }
+    }
+  }
+  
