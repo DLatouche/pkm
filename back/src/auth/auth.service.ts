@@ -20,10 +20,16 @@ export class AuthService {
     async login(user: any) {
         const payload = { username: user.username, sub: user._id };
         let dataUser = await this.trainersService.findById(user._id)
+        console.log('auth.service.ts -> 23: dataUser', dataUser)
+        let boxes = []
+        dataUser.boxes.forEach((b) => {
+            boxes.push({ id: b._id, pokemons: b.pokemons, name: b.name })
+        })
         return {
             access_token: this.jwtService.sign(payload),
             userId: user._id,
-            name: dataUser.name
+            name: dataUser.name,
+            boxes: boxes
         }
     }
 

@@ -6,5 +6,6 @@ export declare class AppController {
         access_token: string;
         userId: any;
         name: string;
+        boxes: any[];
     }>;
 }

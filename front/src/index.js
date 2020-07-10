@@ -11,16 +11,16 @@ const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
-      contrastText: '#fff',
+      light: '#d7e360',
+      main: '#cddc39',
+      dark: '#8f9a27',
+      contrastText: '#000',
     },
     secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
+      light: '#c786d3',
+      main: '#ba68c8',
+      dark: '#82488c',
+      contrastText: '#fff',
     },
   },
 });

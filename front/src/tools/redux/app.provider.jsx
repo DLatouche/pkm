@@ -3,7 +3,7 @@ import React, { useReducer, useContext } from "react";
 const { appReducer } = require("./app.reducer");
 const { AppContext } = require("./app.context");
 
-const initialState = {user:{id: null}};
+const initialState = {user:{userId: null}};
 
 function AppProvider(props) {
     const [store, dispatch] = useReducer(appReducer, initialState)

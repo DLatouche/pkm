@@ -13,4 +13,16 @@ const request = (url, type, data) => {
     return axios(options)
 }
 
-export { request }
+const authRequest = (token, url, type, data) => {
+    let options = {
+        method: type,
+        url: urlAPI + url,
+        headers: {'Authorization': 'bearer ' + token}
+    }
+    if (type === "POST") {
+        options.data = data
+    }
+    return axios(options) 
+}
+
+export { request, authRequest }

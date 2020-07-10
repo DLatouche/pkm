@@ -10,9 +10,9 @@ import Loader from '../../utility/loader/Loader';
 import Toast from '../../utility/toast/Toast';
 
 export default function LogIn() {
-    const {store,  dispatch } = useAppContext();
-    let {user} = store
-    if(!user?.username){
+    const { store, dispatch } = useAppContext();
+    let { user } = store
+    if (!user?.username) {
         user.username = ""
         user.password = ""
     }
@@ -32,7 +32,9 @@ export default function LogIn() {
         if (username.length > 0 && password.length > 0) {
             try {
                 let result = await request('auth/login', "POST", { username, password })
-                dispatch(logIn({username, password, accessToken: result.data.access_token, userId: result.data.userId, name: result.data.name}))
+                dispatch(logIn({ username, password, accessToken: result.data.access_token, userId: result.data.userId, name: result.data.name, boxes: result.data.boxes }))
+                localStorage.setItem("accessToken", result.data.access_token)
+                localStorage.setItem("userId", result.data.userId)
                 history.push('trainer')
             } catch (e) {
                 console.log("%cLogin.jsx -> 34 ERROR: e", 'background: #FF0000; color:#FFFFFF', e)
@@ -55,7 +57,7 @@ export default function LogIn() {
             <Paper elevation={3}>
                 <h2>Connexion</h2>
                 <div className="input">
-                    <TextField name="username" label="Identifiant" onChange={onInputChange} error={state.errorUsername.length > 0} helperText={state.errorUsername} defaultValue={user?.username}/>
+                    <TextField name="username" label="Identifiant" onChange={onInputChange} error={state.errorUsername.length > 0} helperText={state.errorUsername} defaultValue={user?.username} />
                 </div>
                 <div className="input">
                     <TextField name="password" type="password" label="Mot de passe" onChange={onInputChange} error={state.errorPassword.length > 0} helperText={state.errorPassword} defaultValue={user.password} />

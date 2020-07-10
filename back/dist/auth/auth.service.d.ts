@@ -9,5 +9,6 @@ export declare class AuthService {
         access_token: string;
         userId: any;
         name: string;
+        boxes: any[];
     }>;
 }

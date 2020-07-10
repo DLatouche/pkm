@@ -1,0 +1,13 @@
+.dialogBox{
+    .button{
+        display: flex;
+        justify-content: center;
+        align-content: space-between;
+        button{
+            margin: 16px;}
+    }
+
+    .input{
+        margin: 16px;
+    }
+}

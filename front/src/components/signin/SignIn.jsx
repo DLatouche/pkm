@@ -27,7 +27,7 @@ export default function SignIn() {
         let showLoader = true
         if (username.length > 0 && password.length > 0) {
             try {
-                let result = await request('trainers', "POST", { name, username, password })
+                await request('trainers', "POST", { name, username, password })
                 dispatch(signIn({ username, password }))
                 history.push('trainer')
             } catch (e) {
