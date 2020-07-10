@@ -7,18 +7,17 @@ import Toast from '../../utility/toast/Toast'
 import { Paper, Button } from '@material-ui/core'
 import AddBox from './addBox/AddBox'
 import Logout from '../../utility/logout/Logout'
+import { useHistory } from 'react-router-dom'
 
 
 export default function User({ user, dispatch }) {
-    console.log("User.jsx -> 13: ALLLO",  )
+    const history = useHistory();
     const [state, setState] = useState({ username: "", name: "", boxes: [], openToast: false, showLoader: true, openAddBox: false })
-    console.log("User.jsx -> 14: user", user  )
     useEffect(() => {
         const fetchdData = async () => {
             try {
                 let url = 'trainers/' + user.userId
                 let result = await authRequest(user.accessToken, url, "GET")
-                console.log("User.jsx -> 19: result.data", result.data  )
                 setState(prev => ({ ...prev, showLoader: false, username: result.data.username, name: result.data.name, boxes: result.data.boxes }))
 
             } catch (e) {
@@ -26,7 +25,6 @@ export default function User({ user, dispatch }) {
                 console.log("User.jsx -> 15: e", e)
             }
         }
-        console.log("User.jsx -> 27: user", user  )
         if (user.userId) fetchdData()
     }, [user])
 
@@ -42,12 +40,12 @@ export default function User({ user, dispatch }) {
                 <Paper elevation={3}>
                     <div className="containerLogout">
                         <h2>Dresseur</h2>
-                            <Logout />
+                        <Logout />
                     </div>
                     <p>Nom: {state.name}</p>
                     <p>Identifiant: {state.username}</p>
                     <div className="containerBoxes">
-                        {state.boxes.map(b => (<div key={b._id} className="box"><p>{b.name}</p><p>Pokemons: {b.pokemons.length}</p></div>))}
+                        {state.boxes.length === 0?<p>Aucune boîte...</p>:state.boxes.map(b => (<div onClick={() => { history.push("/box/" + b._id) }} key={b._id} className="box"><p>{b.name}</p><p>Pokemons: {b.pokemons.length}</p></div>))}
                     </div>
                     <div className="button">
                         <Button onClick={openAddBox} variant="contained" color="primary">

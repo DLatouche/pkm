@@ -14,17 +14,13 @@ export default function PrivateRoute({ component: Component, ...rest }) {
         if (isLoggedIn) {
             if (user?.accessToken?.length > 0) setIsLoggedIn(true)
             let accessToken = localStorage.getItem('accessToken');
-            console.log("PrivateRoute.jsx -> 16: accessToken", accessToken)
             let userId = localStorage.getItem('userId');
             if (accessToken) { //TO DO
-                console.log("PrivateRoute.jsx -> 18: dis",)
                 dispatch(refresh({ accessToken, userId }))
                 setIsLoggedIn(true)
             }
         } else {
             let accessToken = localStorage.getItem('accessToken');
-            console.log("PrivateRoute.jsx -> 23: accessToken", accessToken)
-            console.log("PrivateRoute.jsx -> 28: set", user)
             if (!!accessToken) {
                 localStorage.setItem("accessToken", user.accessToken)
                 localStorage.setItem("userId", user.userId)
@@ -39,7 +35,6 @@ export default function PrivateRoute({ component: Component, ...rest }) {
                 {...rest}
                 render={props => {
                     const newProps = { ...props, dispatch, user }
-                    console.log("PrivateRoute.jsx -> 38: isLoggedIn", isLoggedIn)
                     return <Component {...newProps} />
                 }
                 }

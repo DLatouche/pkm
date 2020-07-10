@@ -1,4 +1,4 @@
-.dialogBox{
+.dialogPokemon{
     .button{
         display: flex;
         justify-content: center;
@@ -12,9 +12,6 @@
     }
 
     .select{
-        width: 100%;
-        min-width: 120px;
-        display: flex;
         margin: 16px;
     }
 }

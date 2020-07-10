@@ -1642,7 +1642,7 @@
         "affectsGlobalScope": false
       },
       "../src/trainers/trainers.service.ts": {
-        "version": "b2013a7365acadd2a58cdb3b6d6771e55f9a40cb52f98478d883d769e0a5847d",
+        "version": "a3534dd248ba2186eb91800d4fc3ce6a599ec03cee538f28c4133c28c70a7cc7",
         "signature": "982a02bdb22e72ddd0258a0fe4e43752a117ea7b939664a9c63277e85fb48084",
         "affectsGlobalScope": false
       },

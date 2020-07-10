@@ -66,7 +66,7 @@ let TrainersService = class TrainersService {
         return trainer.boxes;
     }
     async findOneBox(trainerId, boxId) {
-        const trainer = await this.trainerModel.findById(trainerId).populate({ path: "boxes", match: { _id: boxId } });
+        const trainer = await this.trainerModel.findById(trainerId).populate({ path: "boxes", match: { _id: boxId }, populate: { path: "pokemons", populate: [{ path: 'firstType' }, { path: 'secondType' }] } });
         return trainer.boxes[0];
     }
     async addPokemon(trainerId, boxId, name, firstTypeId, secondTypeId) {

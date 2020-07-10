@@ -1,0 +1,45 @@
+.containerBox{
+        display: flex;
+        flex-wrap: wrap;
+        div{
+          margin: auto;
+          margin-top: 10%;
+          h2{
+            margin: 16px;
+            text-align: center;
+          }
+        }
+      
+        .button{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 16px;
+        }
+
+        .containerPokemons{
+            user-select: none;
+            margin: 16px;
+               display: grid;
+               grid-template-columns: 150px 150px 150px 150px;
+               column-gap: 12px;
+                row-gap: 12PX;
+               .pokemon{
+                   height: 150px;
+                   width: 100%;
+                   border: 3px solid white;
+                   border-radius: 3px;
+                   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                   p{
+                       text-align: center;
+                   }
+                &:hover{
+                    cursor: pointer;
+                   border: 3px solid #ba68c8;
+                   color: #ba68c8;
+        
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                }
+               }
+           }
+}

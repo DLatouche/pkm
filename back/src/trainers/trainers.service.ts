@@ -54,7 +54,7 @@ export class TrainersService {
     }
 
     async findOneBox(trainerId: string, boxId: string): Promise<Box> {
-        const trainer = await this.trainerModel.findById(trainerId).populate({ path: "boxes", match: { _id: boxId } })
+        const trainer = await this.trainerModel.findById(trainerId).populate({ path: "boxes", match: { _id: boxId }, populate: {path: "pokemons", populate: [{path: 'firstType'}, {path:'secondType'}]}})
         return trainer.boxes[0];
     }
 
