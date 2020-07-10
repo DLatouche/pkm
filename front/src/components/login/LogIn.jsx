@@ -32,9 +32,9 @@ export default function LogIn() {
         if (username.length > 0 && password.length > 0) {
             try {
                 let result = await request('auth/login', "POST", { username, password })
-                dispatch(logIn({ username, password, accessToken: result.data.access_token, userId: result.data.userId, name: result.data.name, boxes: result.data.boxes }))
                 localStorage.setItem("accessToken", result.data.access_token)
                 localStorage.setItem("userId", result.data.userId)
+                dispatch(logIn({ username, password, accessToken: result.data.access_token, userId: result.data.userId, name: result.data.name, boxes: result.data.boxes }))
                 history.push('trainer')
             } catch (e) {
                 console.log("%cLogin.jsx -> 34 ERROR: e", 'background: #FF0000; color:#FFFFFF', e)
